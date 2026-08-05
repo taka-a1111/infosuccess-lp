@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-07k -->
+<!-- BUILD_TAG: 2026-08-07l -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -158,21 +158,25 @@ img{max-width:100%;display:block}
 /* ---------- hero ---------- */
 .hero{
   min-height:100vh;display:flex;align-items:center;
-  padding:150px 0 100px;position:relative;
+  padding:150px 0 100px;position:relative;overflow:hidden;
 }
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) 40%;gap:36px;align-items:center}
+.hero>.wrap{width:100%;max-width:none;margin:0;padding-left:min(9vw,150px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) 44%;gap:20px;align-items:center}
 
 /* hero visual */
-.hvis{position:relative;width:100%;max-width:560px;margin-left:auto}
+.hvis{position:relative;width:100%;max-width:none;margin-left:auto}
 .hvis img{width:100%;height:auto;display:block}
 @media (prefers-reduced-motion:no-preference){
   .hvis{animation:floaty 8s ease-in-out infinite}
 }
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.hero-rule{width:56px;height:1px;background:var(--accent);margin-bottom:32px}
+.hero-rule{
+  width:104px;height:1px;margin-bottom:34px;
+  background:linear-gradient(to right,var(--accent) 0 58%,#D8C39B 58% 100%);
+}
 .hero h1{
   font-family:var(--serif);
-  font-size:clamp(28px,2.85vw,37px);
+  font-size:clamp(28px,2.92vw,46px);
   font-weight:600;
   line-height:1.6;
   letter-spacing:.05em;
@@ -185,7 +189,7 @@ img{max-width:100%;display:block}
   .hvis{max-width:520px;margin:0}
 }
 .hero h1 em{font-style:normal;color:var(--accent)}
-.hero p{font-size:16px;color:var(--sub);max-width:520px;margin-bottom:46px;line-height:2.15}
+.hero p{font-size:16px;color:var(--sub);max-width:620px;margin-bottom:48px;line-height:2.1}
 .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 
 /* load sequence */
@@ -542,9 +546,17 @@ img{max-width:100%;display:block}
 .assure p{font-size:14px;color:var(--sub);line-height:2}
 
 /* ---------- hero micro copy ---------- */
-.cta-micro{margin-top:22px;font-size:12.5px;color:#8C8A84;letter-spacing:.03em;display:flex;flex-wrap:wrap;gap:6px 18px}
+.cta-micro{margin-top:26px;font-size:13px;color:#7C7A74;letter-spacing:.03em;display:flex;flex-wrap:wrap;gap:10px 26px}
 .cta-micro span{display:flex;align-items:center;gap:8px}
-.cta-micro span::before{content:"";width:5px;height:5px;border:1px solid #C6C3BB;display:block}
+.cta-micro span::before{
+  content:"";width:15px;height:15px;border:1px solid #D8C39B;border-radius:50%;
+  display:block;position:relative;flex:none;
+}
+.cta-micro span::after{
+  content:"";position:absolute;left:4px;top:5px;width:4px;height:7px;
+  border-right:1.2px solid #C2A876;border-bottom:1.2px solid #C2A876;transform:rotate(42deg);
+}
+.cta-micro span{position:relative}
 
 /* ---------- price pitch ---------- */
 .pitch{margin-top:46px;padding-top:36px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start;gap:24px}
@@ -1524,7 +1536,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-07k</span>
+      <span>BUILD 2026-08-07l</span>
     </div>
   </div>
 </footer>
