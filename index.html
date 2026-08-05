@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-06c -->
+<!-- BUILD_TAG: 2026-08-06d -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -246,22 +246,33 @@ img{max-width:100%;display:block}
 }
 
 /* ---------- problem ---------- */
-.problem-grid{
+.checks{
   display:grid;grid-template-columns:repeat(2,1fr);
-  border-top:1px solid var(--line);margin-top:52px;
+  column-gap:56px;margin-top:52px;border-top:1px solid var(--line);
 }
-.problem-grid li{
-  border-bottom:1px solid var(--line);
-  padding:34px 30px 34px 0;
-  display:flex;gap:20px;align-items:flex-start;
+.checks li{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:20px 4px;border-bottom:1px solid var(--line);
+  font-size:15.5px;line-height:1.85;color:var(--text);
+  transition:background .35s ease,padding-left .35s ease;
 }
-.problem-grid li:nth-child(odd){border-right:1px solid var(--line);padding-right:40px}
-.problem-grid li:nth-child(even){padding-left:40px}
-.problem-grid b{
-  font-family:var(--num);font-size:11px;letter-spacing:.14em;
-  color:var(--accent);font-weight:400;padding-top:6px;flex:none;
+.checks li:hover{background:var(--paper3);padding-left:12px}
+.checks .box{
+  flex:none;width:19px;height:19px;border:1px solid var(--line2);
+  margin-top:5px;position:relative;transition:border-color .35s ease,background .35s ease;
 }
-.problem-grid p{font-size:15.5px;line-height:1.95}
+.checks li:hover .box{border-color:var(--accent)}
+.checks .box::after{
+  content:"";position:absolute;left:5px;top:1px;width:6px;height:11px;
+  border-right:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);
+  transform:rotate(42deg) scale(0);transform-origin:center;
+  transition:transform .35s cubic-bezier(.22,.7,.2,1);
+}
+.checks li:hover .box::after{transform:rotate(42deg) scale(1)}
+.checks-note{
+  margin-top:34px;font-size:15px;color:var(--text);line-height:1.95;
+  border-left:1px solid var(--accent);padding:4px 0 4px 22px;
+}
 
 /* ---------- services ---------- */
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line)}
@@ -680,9 +691,9 @@ img{max-width:100%;display:block}
   .hero p{margin-bottom:34px}
   .hero-actions{flex-direction:column;align-items:stretch}
   .btn{justify-content:center;padding:17px 24px}
-  .problem-grid{grid-template-columns:1fr}
-  .problem-grid li:nth-child(odd){border-right:0;padding-right:0}
-  .problem-grid li:nth-child(even){padding-left:0}
+  .checks{grid-template-columns:1fr;column-gap:0}
+  .checks li{font-size:15px;padding:17px 4px;gap:14px}
+  .checks-note{font-size:14.5px;padding-left:18px}
   .svc,.works,.flow,.plans,.assure{grid-template-columns:1fr}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
   .trust-grid div{padding:22px 16px}
@@ -790,12 +801,16 @@ img{max-width:100%;display:block}
     <p class="eyebrow">ISSUE</p>
     <h2 class="h2">「作ったのに、何も起きなかった」<br>という相談が、いちばん多い。</h2>
     <p class="lead">ホームページは、公開した瞬間がゴールではありません。見つけてもらう設計と、問い合わせまでの導線が抜けていると、どれだけ見た目が良くても数字は動きません。</p>
-    <ul class="problem-grid stagger">
-      <li><b>01</b><p>公開して半年経つが、問い合わせが1件も入っていない</p></li>
-      <li><b>02</b><p>提案の優先順位や費用の根拠が分からず、投資判断ができない</p></li>
-      <li><b>03</b><p>更新の仕方が分からず、情報が古いまま止まっている</p></li>
-      <li><b>04</b><p>制作とSEOと広告で会社が別々になり、話が通らない</p></li>
+    <ul class="checks stagger">
+      <li><span class="box" aria-hidden="true"></span>公開して半年経つが、問い合わせが1件も入っていない</li>
+      <li><span class="box" aria-hidden="true"></span>提案の優先順位や費用の根拠が分からず、投資判断ができない</li>
+      <li><span class="box" aria-hidden="true"></span>更新の仕方が分からず、情報が古いまま止まっている</li>
+      <li><span class="box" aria-hidden="true"></span>制作とSEOと広告で会社が別々になり、話が通らない</li>
+      <li><span class="box" aria-hidden="true"></span>検索しても自社が出てこない。何が原因なのか分からない</li>
+      <li><span class="box" aria-hidden="true"></span>ChatGPTなどのAIに聞かれたとき、自社が出てくるのか分からない</li>
+      <li><span class="box" aria-hidden="true"></span>担当者がすぐ変わり、こちらの事業を毎回説明し直している</li>
     </ul>
+    <p class="checks-note">ひとつでも当てはまるなら、まずは無料診断で現状を確認するところから始められます。</p>
   </div>
 </section>
 
@@ -1263,7 +1278,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-06c</span>
+      <span>BUILD 2026-08-06d</span>
     </div>
   </div>
 </footer>
