@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-06b -->
+<!-- BUILD_TAG: 2026-08-06c -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -139,20 +139,6 @@ img{max-width:100%;display:block}
 .burger.open span:nth-child(1){transform:translateY(9px) rotate(38deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-9px) rotate(-38deg)}
-
-/* ---------- side index (signature) ---------- */
-.side-index{
-  position:fixed;left:32px;top:50%;transform:translateY(-50%);
-  z-index:70;display:flex;flex-direction:column;gap:14px;
-}
-.side-index a{
-  display:flex;align-items:center;gap:10px;
-  font-family:var(--num);font-size:10px;letter-spacing:.16em;color:#B9B6AE;
-  transition:color .3s;
-}
-.side-index a i{display:block;width:14px;height:1px;background:#D6D3CB;transition:width .35s,background .35s}
-.side-index a.active{color:var(--ink)}
-.side-index a.active i{width:30px;background:var(--accent)}
 
 /* ---------- hero ---------- */
 .hero{
@@ -356,30 +342,24 @@ img{max-width:100%;display:block}
 
 /* ---------- search comparison ---------- */
 .cmp{margin-top:56px;border-top:1px solid var(--line)}
-.cmp-row{
-  display:grid;grid-template-columns:132px 1fr;gap:30px;
-  padding:36px 0;border-bottom:1px solid var(--line);align-items:start;
+.cmp-head{
+  display:grid;grid-template-columns:150px 1fr 1fr;gap:0;
+  border-bottom:1px solid var(--line);
 }
-.cmp-label{font-family:var(--num);font-size:11px;letter-spacing:.16em;color:var(--sub);padding-top:5px}
-.cmp-row.ai .cmp-label{color:var(--accent)}
-.cmp-flow{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.cmp-key{font-size:15.5px;font-weight:500;color:var(--text);flex:none}
-.cmp-conn{width:36px;height:1px;background:var(--line2);flex:none}
-.cmp-row.ai .cmp-conn{background:var(--accent);height:1.5px}
-.cmp-stack{display:flex;flex-direction:column;gap:7px;flex:none}
-.cmp-stack i{display:block;height:14px;background:var(--paper3);width:160px}
-.cmp-stack i:last-child{width:112px}
-.cmp-row.ai .cmp-stack i{width:132px;background:var(--paper3)}
-.cmp-row.ai .cmp-stack i:last-child{width:132px}
-.cmp-ans{
-  background:var(--accent-soft);border:1px solid var(--accent);
-  padding:16px 26px;font-size:15.5px;font-weight:500;color:var(--accent-deep);flex:none;
+.cmp-head span{
+  padding:18px 20px;font-family:var(--num);font-size:11px;letter-spacing:.15em;color:var(--sub);
 }
-.cmp-desc{margin-top:20px;font-size:14.5px;color:var(--sub);line-height:2}
-.cmp-sub{font-size:12.5px;color:#A8A49B;margin-top:10px}
+.cmp-head span.is-ai{background:var(--accent-soft);color:var(--accent-deep);font-weight:500}
+.cmp-body{display:grid;grid-template-columns:150px 1fr 1fr}
+.cmp-body>div{
+  padding:20px;border-bottom:1px solid var(--line);
+  font-size:15px;line-height:1.85;color:var(--text);
+}
+.cmp-body>div.k{font-size:13.5px;color:var(--sub);letter-spacing:.04em}
+.cmp-body>div.ai{background:var(--accent-soft);color:var(--accent-deep);font-weight:500}
 .cmp-note{
-  margin-top:30px;border:1px solid var(--accent);padding:22px 26px;
-  font-size:15px;color:var(--accent-deep);font-weight:500;line-height:1.85;
+  margin-top:34px;border-left:1px solid var(--accent);padding:6px 0 6px 24px;
+  font-size:16px;color:var(--accent-deep);font-weight:500;line-height:1.85;
 }
 
 /* ---------- growth ---------- */
@@ -636,7 +616,6 @@ img{max-width:100%;display:block}
 /* ---------- responsive ---------- */
 @media (max-width:980px){
   :root{--pad:84px}
-  .side-index{display:none}
   .hero .wrap{grid-template-columns:1fr;gap:52px}
   .hflow{max-width:340px}
   .svc,.works,.flow,.plans,.metrics,.assure,.trust-grid{grid-template-columns:repeat(2,1fr)}
@@ -679,13 +658,13 @@ img{max-width:100%;display:block}
   .hero .wrap{gap:40px}
   .works{gap:36px}
   .fig-cap{font-size:13px;margin-top:18px}
-  .cmp-row{grid-template-columns:1fr;gap:16px;padding:30px 0}
-  .cmp-label{padding-top:0}
-  .cmp-flow{gap:14px}
-  .cmp-conn{width:24px}
-  .cmp-stack i,.cmp-row.ai .cmp-stack i,.cmp-stack i:last-child,.cmp-row.ai .cmp-stack i:last-child{width:96px}
-  .cmp-ans{padding:14px 20px;font-size:15px}
-  .cmp-note{padding:18px 20px;font-size:14.5px}
+  .cmp-head{grid-template-columns:1fr 1fr}
+  .cmp-head span:first-child{display:none}
+  .cmp-head span{padding:14px 14px}
+  .cmp-body{grid-template-columns:1fr 1fr}
+  .cmp-body>div{padding:14px;font-size:14.5px}
+  .cmp-body>div.k{grid-column:1/3;padding:16px 14px 6px;border-bottom:0;font-size:12.5px}
+  .cmp-note{font-size:15px;padding-left:18px}
   .growth-item{grid-template-columns:1fr auto;gap:6px 16px;padding:18px 0}
   .gl{grid-column:1}
   .gv{grid-column:2;grid-row:1;font-size:24px}
@@ -758,19 +737,6 @@ img{max-width:100%;display:block}
   </nav>
   <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
 </header>
-
-<nav class="side-index" id="sideIndex" aria-label="セクション目次">
-  <a href="#hero"><i></i>TOP</a>
-  <a href="#problem"><i></i>ISSUE</a>
-  <a href="#service"><i></i>SERVICE</a>
-  <a href="#works"><i></i>WORKS</a>
-  <a href="#reason"><i></i>REASON</a>
-  <a href="#flow"><i></i>FLOW</a>
-  <a href="#assure"><i></i>COMMITMENT</a>
-  <a href="#price"><i></i>PRICE</a>
-  <a href="#faq"><i></i>FAQ</a>
-  <a href="#profile"><i></i>ABOUT</a>
-</nav>
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -866,47 +832,26 @@ img{max-width:100%;display:block}
       </article>
     </div>
     <div class="cmp reveal">
-      <div class="cmp-row">
-        <p class="cmp-label">GOOGLE検索</p>
-        <div>
-          <div class="cmp-flow">
-            <span class="cmp-key">キーワード</span>
-            <span class="cmp-conn"></span>
-            <span class="cmp-stack"><i></i><i></i><i></i><i></i></span>
-          </div>
-          <p class="cmp-desc">検索結果に10本のリンクが並び、どれを読むかはユーザーが選びます。上位に入っていれば読まれる可能性があります。</p>
-        </div>
+      <div class="cmp-head">
+        <span></span>
+        <span>GOOGLE検索</span>
+        <span class="is-ai">AI検索</span>
       </div>
-      <div class="cmp-row ai">
-        <p class="cmp-label">AI検索</p>
-        <div>
-          <div class="cmp-flow">
-            <span class="cmp-key">質問</span>
-            <span class="cmp-conn"></span>
-            <span class="cmp-stack"><i></i><i></i><i></i></span>
-            <span class="cmp-conn"></span>
-            <span class="cmp-ans">1つの答えに統合</span>
-          </div>
-          <p class="cmp-desc">複数のサイトの情報が1つの答えにまとめられ、引用された数サイトだけが読まれます。順位ではなく、引用されるかどうかで決まります。</p>
-          <p class="cmp-sub">引用された数サイトだけが読まれる</p>
-        </div>
+      <div class="cmp-body">
+        <div class="k">返ってくるもの</div>
+        <div>10本のリンク</div>
+        <div class="ai">1つにまとまった答え</div>
+        <div class="k">選ぶのは誰か</div>
+        <div>ユーザーが選んで読む</div>
+        <div class="ai">AIが引用先を選ぶ</div>
+        <div class="k">評価される軸</div>
+        <div>検索順位に入っているか</div>
+        <div class="ai">引用されるか</div>
+        <div class="k">必要な対策</div>
+        <div>SEO</div>
+        <div class="ai">AIO・LLMO</div>
       </div>
-      <p class="cmp-note">引用されなければ、存在しないのと同じになる。</p>
-      <p class="fig-cap">従来の検索では10本のリンクが並び、ユーザーがどれを読むかを選んでいました。AI検索では複数のサイトの情報が1つの答えにまとめられ、引用された数サイトだけが読まれます。引用される側に入っておくための設計が、AIO・LLMO対策です。</p>
-    </div>
-  </div>
-</section>
-
-<!-- METRICS -->
-<section class="section section--dark" id="metrics">
-  <div class="wrap reveal">
-    <p class="eyebrow">RESULT</p>
-    <h2 class="h2">支援先メディアの実績</h2>
-    <div class="metrics stagger">
-      <div><p class="num"><span class="cnt" data-to="20">0</span><small>万</small></p><p class="cap">月間セッション数</p><p class="from"><em></em>開始時 3万</p></div>
-      <div><p class="num"><span class="cnt" data-to="120">0</span><small>本</small></p><p class="cap">納品記事数</p><p class="from"><em></em>18ヶ月で納品</p></div>
-      <div><p class="num"><span class="cnt" data-to="15">0</span><small>%</small></p><p class="cap">主要KW1位獲得率</p></div>
-      <div><p class="num"><span class="cnt" data-to="16">0</span><small>年</small></p><p class="cap">SEO実務歴</p></div>
+      <p class="cmp-note">AI検索では、引用されなければ存在しないのと同じになります。</p>
     </div>
     <div class="growth reveal">
       <div class="growth-item">
@@ -1103,8 +1048,8 @@ img{max-width:100%;display:block}
       <span class="gate">STEP 03</span>
       <span class="gate-sep"><span>承認</span><i></i></span>
       <span class="gate is-last">STEP 04</span>
-      <p class="fig-cap">工程と工程の間に、内容をご確認いただく区切りを設けています。承認をいただいてから次へ進むため、完成間際に大きな作り直しが発生しません。</p>
     </div>
+    <p class="fig-cap">工程と工程の間に、内容をご確認いただく区切りを設けています。承認をいただいてから次へ進むため、完成間際に大きな作り直しが発生しません。</p>
     <div class="flow stagger">
       <article>
         <span class="fn">STEP 01</span>
@@ -1318,7 +1263,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-06b</span>
+      <span>BUILD 2026-08-06c</span>
     </div>
   </div>
 </footer>
@@ -1539,23 +1484,6 @@ img{max-width:100%;display:block}
     });
   },{threshold:.5});
   document.querySelectorAll('.rule-draw').forEach(function(el){ rio.observe(el); });
-
-  var links=document.querySelectorAll('#sideIndex a');
-  var targets=[];
-  links.forEach(function(l){
-    var t=document.querySelector(l.getAttribute('href'));
-    if(t){ targets.push({link:l,el:t}); }
-  });
-  var spy=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        links.forEach(function(l){ l.classList.remove('active'); });
-        var hit=targets.filter(function(t){ return t.el===e.target; })[0];
-        if(hit){ hit.link.classList.add('active'); }
-      }
-    });
-  },{threshold:.3,rootMargin:'-30% 0px -50% 0px'});
-  targets.forEach(function(t){ spy.observe(t.el); });
 
   document.getElementById('submitBtn').addEventListener('click',function(){
     alert('こちらは確認用のデザイン案です。送信機能は接続前の状態です。');
