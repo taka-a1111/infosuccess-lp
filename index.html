@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-07o -->
+<!-- BUILD_TAG: 2026-08-07p -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -245,7 +245,7 @@ img{max-width:100%;display:block}
   gap:14px;margin-top:52px;
 }
 .checks li{
-  display:flex;align-items:center;gap:0;
+  display:flex;align-items:flex-start;gap:0;
   border:1px solid var(--line);background:var(--paper);
   padding:20px 24px;font-size:15px;line-height:1.75;color:var(--text);
   transition:border-color .35s ease,background .35s ease;
@@ -253,15 +253,16 @@ img{max-width:100%;display:block}
 .checks li:hover{border-color:var(--accent);background:var(--paper2)}
 .checks .box{
   flex:none;width:26px;height:26px;background:var(--ink);border:1px solid var(--ink);
-  position:relative;margin-right:18px;
+  position:relative;margin-right:18px;margin-top:1px;
 }
 .checks .box::after{
   content:"";position:absolute;left:9px;top:5px;width:6px;height:12px;
   border-right:1.7px solid #fff;border-bottom:1.7px solid #fff;transform:rotate(42deg);
 }
-.checks .box::before{
-  content:"";position:absolute;right:-18px;top:-4px;bottom:-4px;width:1px;background:var(--line2);
+.checks li::before{
+  content:"";position:absolute;left:60px;top:20px;bottom:20px;width:1px;background:var(--line2);
 }
+.checks li{position:relative}
 .checks li span:not(.box){padding-left:18px}
 .checks-note{
   margin-top:26px;border:1px solid var(--line2);background:var(--paper);
@@ -885,7 +886,7 @@ img{max-width:100%;display:block}
   .checks{grid-template-columns:1fr;gap:12px}
   .checks li{font-size:14.5px;padding:16px 16px}
   .checks .box{width:23px;height:23px;margin-right:14px}
-  .checks .box::before{right:-14px}
+  .checks li::before{left:47px;top:17px;bottom:17px}
   .checks li span:not(.box){padding-left:14px}
   .checks-note{padding:20px;gap:16px;font-size:14.5px}
   .cn-ico{width:48px;height:48px}
@@ -1541,7 +1542,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-07o</span>
+      <span>BUILD 2026-08-07p</span>
     </div>
   </div>
 </footer>
