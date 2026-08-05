@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-05q -->
+<!-- BUILD_TAG: 2026-08-05r -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -493,8 +493,19 @@ img{max-width:100%;display:block}
 
 /* ---------- profile ---------- */
 .profile{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start;margin-top:52px}
-.pf-photo{border:1px solid var(--line);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;background:var(--paper2)}
-.pf-photo span{font-family:var(--serif);font-size:52px;letter-spacing:.1em;color:#C6C3BB}
+.pf-photo{
+  border:1px solid var(--line);aspect-ratio:3/4;background:var(--paper2);
+  overflow:hidden;position:relative;
+}
+.pf-photo img{
+  width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;
+  filter:saturate(.9);transition:filter .6s ease,transform .8s cubic-bezier(.22,.7,.2,1);
+}
+.profile:hover .pf-photo img{filter:saturate(1);transform:scale(1.02)}
+.pf-photo figcaption{
+  position:absolute;left:0;bottom:0;background:var(--ink);color:#F2F1EE;
+  font-family:var(--num);font-size:10px;letter-spacing:.16em;padding:7px 12px;
+}
 .profile h3{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.06em;margin-bottom:8px}
 .profile .role{font-size:13px;color:var(--sub);letter-spacing:.08em;margin-bottom:26px}
 .profile p{font-size:15px;color:var(--sub);line-height:2.15;margin-bottom:18px}
@@ -611,7 +622,7 @@ img{max-width:100%;display:block}
   .assure article:nth-child(3){border-left:1px solid var(--line)}
   .svc article:nth-child(3){border-left:1px solid var(--line)}
   .profile{grid-template-columns:1fr;gap:34px}
-  .pf-photo{max-width:240px;aspect-ratio:1/1}
+  .pf-photo{max-width:260px;aspect-ratio:3/4}
   .reasons li{grid-template-columns:60px 1fr;gap:20px}
   .reasons p{grid-column:2}
   .metrics div{padding:22px 0 0}
@@ -1235,7 +1246,10 @@ img{max-width:100%;display:block}
     <p class="eyebrow">ABOUT</p>
     <h2 class="h2">運営者について</h2>
     <div class="profile">
-      <div class="pf-photo"><span>髙崎</span></div>
+      <figure class="pf-photo">
+        <img src="./works/profile.webp" width="600" height="800" loading="lazy" decoding="async" alt="インフォサクセス 代表 髙崎">
+        <figcaption>TAKASAKI</figcaption>
+      </figure>
       <div>
         <h3>髙崎</h3>
         <p class="role">インフォサクセス 代表 / Webディレクター</p>
@@ -1317,7 +1331,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-05q</span>
+      <span>BUILD 2026-08-05r</span>
     </div>
   </div>
 </footer>
