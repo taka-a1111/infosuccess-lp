@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-07b -->
+<!-- BUILD_TAG: 2026-08-07c -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -221,30 +221,40 @@ img{max-width:100%;display:block}
 /* ---------- problem ---------- */
 .checks{
   display:grid;grid-template-columns:repeat(2,1fr);
-  column-gap:56px;margin-top:52px;border-top:1px solid var(--line);
+  gap:14px;margin-top:52px;
 }
 .checks li{
-  display:flex;align-items:flex-start;gap:16px;
-  padding:20px 4px;border-bottom:1px solid var(--line);
-  font-size:15.5px;line-height:1.85;color:var(--text);
-  transition:background .35s ease,padding-left .35s ease;
+  display:flex;align-items:center;gap:0;
+  border:1px solid var(--line);background:var(--paper);
+  padding:20px 24px;font-size:15px;line-height:1.75;color:var(--text);
+  transition:border-color .35s ease,background .35s ease;
 }
-.checks li:hover{background:var(--paper3);padding-left:12px}
+.checks li:hover{border-color:var(--accent);background:var(--paper2)}
 .checks .box{
-  flex:none;width:20px;height:20px;border:1px solid var(--accent);
-  background:var(--accent);margin-top:5px;position:relative;
-  transition:background .3s ease,border-color .3s ease;
+  flex:none;width:26px;height:26px;background:var(--ink);border:1px solid var(--ink);
+  position:relative;margin-right:18px;
 }
 .checks .box::after{
-  content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;
-  border-right:1.6px solid #fff;border-bottom:1.6px solid #fff;
-  transform:rotate(42deg);
+  content:"";position:absolute;left:9px;top:5px;width:6px;height:12px;
+  border-right:1.7px solid #fff;border-bottom:1.7px solid #fff;transform:rotate(42deg);
 }
-.checks li:hover .box{background:var(--accent-deep);border-color:var(--accent-deep)}
+.checks .box::before{
+  content:"";position:absolute;right:-18px;top:-4px;bottom:-4px;width:1px;background:var(--line2);
+}
+.checks li span:not(.box){padding-left:18px}
 .checks-note{
-  margin-top:34px;font-size:15px;color:var(--text);line-height:1.95;
-  border-left:1px solid var(--accent);padding:4px 0 4px 22px;
+  margin-top:26px;border:1px solid var(--line2);background:var(--paper);
+  padding:26px 30px;display:flex;align-items:center;gap:24px;
+  font-size:15.5px;color:var(--text);line-height:1.85;
 }
+.checks-note::before{display:none}
+.cn-ico{flex:none;position:relative;width:64px;height:64px;display:flex;align-items:center;justify-content:center}
+.cn-ico::before{
+  content:"";position:absolute;left:50%;top:50%;width:56px;height:56px;
+  margin:-28px 0 0 -28px;border-radius:50%;background:var(--paper3);
+}
+.cn-ico svg{position:relative;width:32px;height:32px;stroke:var(--accent);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.checks-note em{font-style:normal;color:var(--accent);font-weight:500}
 
 /* ---------- services ---------- */
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line)}
@@ -810,9 +820,15 @@ img{max-width:100%;display:block}
   }
   .hero-actions .btn--ghost::before{display:none}
   .hero-actions .btn--ghost:hover{background:transparent;color:var(--accent-deep)}
-  .checks{grid-template-columns:1fr;column-gap:0}
-  .checks li{font-size:15px;padding:17px 4px;gap:14px}
-  .checks-note{font-size:14.5px;padding-left:18px}
+  .checks{grid-template-columns:1fr;gap:12px}
+  .checks li{font-size:14.5px;padding:16px 16px}
+  .checks .box{width:23px;height:23px;margin-right:14px}
+  .checks .box::before{right:-14px}
+  .checks li span:not(.box){padding-left:14px}
+  .checks-note{padding:20px;gap:16px;font-size:14.5px}
+  .cn-ico{width:48px;height:48px}
+  .cn-ico::before{width:44px;height:44px;margin:-22px 0 0 -22px}
+  .cn-ico svg{width:26px;height:26px}
   .svc,.works,.flow,.plans,.assure{grid-template-columns:1fr}
   .flow{gap:46px;margin-top:60px}
   .flow article{padding:40px 22px 30px}
@@ -940,16 +956,19 @@ img{max-width:100%;display:block}
     <h2 class="h2">「作ったのに、何も起きなかった」<br>という相談が、いちばん多い。</h2>
     <p class="lead">ホームページは、公開した瞬間がゴールではありません。見つけてもらう設計と、問い合わせまでの導線が抜けていると、どれだけ見た目が良くても数字は動きません。</p>
     <ul class="checks stagger">
-      <li><span class="box" aria-hidden="true"></span>公開して半年経つが、問い合わせが1件も入っていない</li>
-      <li><span class="box" aria-hidden="true"></span>提案の優先順位や費用の根拠が分からず、投資判断ができない</li>
-      <li><span class="box" aria-hidden="true"></span>更新の仕方が分からず、情報が古いまま止まっている</li>
-      <li><span class="box" aria-hidden="true"></span>制作とSEOと広告で会社が別々になり、話が通らない</li>
-      <li><span class="box" aria-hidden="true"></span>検索しても自社が出てこない。何が原因なのか分からない</li>
-      <li><span class="box" aria-hidden="true"></span>ChatGPTなどのAIに聞かれたとき、自社が出てくるのか分からない</li>
-      <li><span class="box" aria-hidden="true"></span>担当者がすぐ変わり、こちらの事業を毎回説明し直している</li>
-      <li><span class="box" aria-hidden="true"></span>作ってくれた会社と連絡が取れず、修正すら頼めない</li>
+      <li><span class="box" aria-hidden="true"></span><span>公開して半年経つが、問い合わせが1件も入っていない</span></li>
+      <li><span class="box" aria-hidden="true"></span><span>提案の優先順位や費用の根拠が分からず、投資判断ができない</span></li>
+      <li><span class="box" aria-hidden="true"></span><span>更新の仕方が分からず、情報が古いまま止まっている</span></li>
+      <li><span class="box" aria-hidden="true"></span><span>制作とSEOと広告で会社が別々になり、話が通らない</span></li>
+      <li><span class="box" aria-hidden="true"></span><span>検索しても自社が出てこない。何が原因なのか分からない</span></li>
+      <li><span class="box" aria-hidden="true"></span><span>ChatGPTなどのAIに聞かれたとき、自社が出てくるのか分からない</span></li>
+      <li><span class="box" aria-hidden="true"></span><span>担当者がすぐ変わり、こちらの事業を毎回説明し直している</span></li>
+      <li><span class="box" aria-hidden="true"></span><span>作ってくれた会社と連絡が取れず、修正すら頼めない</span></li>
     </ul>
-    <p class="checks-note">ひとつでも当てはまるなら、まずは無料診断で現状を確認するところから始められます。</p>
+    <div class="checks-note">
+      <span class="cn-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6v3H9z"/><path d="M9 4.5H5.5v17h13v-17H15"/><path d="M8.5 11l1.2 1.2 2.6-2.8"/><path d="M8.5 16l1.2 1.2 2.6-2.8"/></svg></span>
+      <p>ひとつでも当てはまるなら、まずは<em>無料診断</em>で現状を確認するところから始められます。</p>
+    </div>
   </div>
 </section>
 
@@ -1458,7 +1477,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-07b</span>
+      <span>BUILD 2026-08-07c</span>
     </div>
   </div>
 </footer>
