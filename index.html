@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-05c -->
+<!-- BUILD_TAG: 2026-08-05d -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -316,12 +316,36 @@ img{max-width:100%;display:block}
 .reasons p{font-size:14.5px;color:var(--sub);line-height:2}
 
 /* ---------- flow ---------- */
-.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
-.flow article{border:1px solid var(--line);padding:38px 30px 34px;background:#fff}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
+.flow article{border:1px solid var(--line);padding:34px 24px 30px;background:#fff}
 .flow .fn{font-family:var(--num);font-size:11px;letter-spacing:.18em;color:var(--accent);margin-bottom:20px;display:block}
 .flow h3{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:14px;letter-spacing:.05em}
 .flow p{font-size:14px;color:var(--sub);line-height:2}
 .flow-note{margin-top:32px;font-size:13.5px;color:var(--sub);line-height:2.05;border-left:1px solid var(--accent);padding-left:22px}
+
+/* ---------- assurance ---------- */
+.assure{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px;border-top:1px solid var(--line)}
+.assure article{padding:36px 32px 32px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.assure article:first-child{border-left:1px solid var(--line)}
+.assure .an{font-family:var(--num);font-size:11px;letter-spacing:.16em;color:var(--accent);display:block;margin-bottom:18px}
+.assure h3{font-family:var(--serif);font-size:18px;font-weight:600;margin-bottom:13px;letter-spacing:.05em;line-height:1.6}
+.assure p{font-size:14px;color:var(--sub);line-height:2}
+
+/* ---------- hero micro copy ---------- */
+.cta-micro{margin-top:22px;font-size:12.5px;color:#8C8A84;letter-spacing:.03em;display:flex;flex-wrap:wrap;gap:6px 18px}
+.cta-micro span{display:flex;align-items:center;gap:8px}
+.cta-micro span::before{content:"";width:5px;height:5px;border:1px solid #C6C3BB;display:block}
+
+/* ---------- price pitch ---------- */
+.pitch{margin-top:46px;padding-top:36px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.pitch p{font-size:14.5px;color:var(--sub);line-height:2.05;max-width:660px}
+
+/* ---------- diagnosis list ---------- */
+.diag{max-width:560px;margin:0 auto 42px;text-align:left;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);padding:28px 0}
+.diag h3{font-family:var(--serif);font-size:16.5px;font-weight:600;color:#F2F1EE;margin-bottom:18px;letter-spacing:.06em}
+.diag li{font-size:14px;color:#A8B0BB;padding:7px 0 7px 20px;position:relative;line-height:1.85}
+.diag li::before{content:"";position:absolute;left:0;top:15px;width:8px;height:1px;background:#6E7885}
+.diag p{font-size:13px;color:#8D96A3;margin-top:18px;line-height:1.95}
 
 /* ---------- price ---------- */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;align-items:end}
@@ -402,7 +426,8 @@ img{max-width:100%;display:block}
   .side-index{display:none}
   .hero .wrap{grid-template-columns:1fr;gap:52px}
   .hero-fig{max-width:320px}
-  .svc,.works,.flow,.plans,.metrics{grid-template-columns:repeat(2,1fr)}
+  .svc,.works,.flow,.plans,.metrics,.assure{grid-template-columns:repeat(2,1fr)}
+  .assure article:nth-child(3){border-left:1px solid var(--line)}
   .svc article:nth-child(3){border-left:1px solid var(--line)}
   .profile{grid-template-columns:1fr;gap:34px}
   .pf-photo{max-width:240px;aspect-ratio:1/1}
@@ -437,7 +462,8 @@ img{max-width:100%;display:block}
   .problem-grid{grid-template-columns:1fr}
   .problem-grid li:nth-child(odd){border-right:0;padding-right:0}
   .problem-grid li:nth-child(even){padding-left:0}
-  .svc,.works,.flow,.plans{grid-template-columns:1fr}
+  .svc,.works,.flow,.plans,.assure{grid-template-columns:1fr}
+  .assure article,.assure article:nth-child(3){border-left:1px solid var(--line)}
   .svc article,.svc article:nth-child(3){border-left:1px solid var(--line)}
   .plan--rec{padding-top:52px}
   .works{gap:44px}
@@ -487,6 +513,7 @@ img{max-width:100%;display:block}
   <a href="#works"><i></i>WORKS</a>
   <a href="#reason"><i></i>REASON</a>
   <a href="#flow"><i></i>FLOW</a>
+  <a href="#assure"><i></i>COMMITMENT</a>
   <a href="#price"><i></i>PRICE</a>
   <a href="#faq"><i></i>FAQ</a>
   <a href="#profile"><i></i>ABOUT</a>
@@ -497,14 +524,15 @@ img{max-width:100%;display:block}
   <div class="wrap">
     <div>
       <div class="hero-rule anim a1"></div>
-      <h1 class="anim a2">ホームページを作る人ではなく、<br>検索と<em>AI</em>から客を<br>連れてくる人です。</h1>
-      <p class="anim a3">名古屋のフリーランス。SEO歴16年。サイトの設計・制作から記事、AI検索対策まで、窓口ひとつで担当が変わらずに進めます。</p>
+      <h1 class="anim a2">ホームページを作る人ではなく、<br>検索・<em>AI</em>・紹介から<br>問い合わせを生む人です。</h1>
+      <p class="anim a3">SEO歴16年のWebディレクターが、事業の整理からサイト設計・制作、記事、AI検索対策まで一貫して担当します。窓口は変わらず、公開後の改善まで伴走します。</p>
       <div class="hero-actions anim a4">
-        <a href="#contact" class="btn btn--solid">無料でサイトを診断する
+        <a href="#contact" class="btn btn--solid">無料でサイトの改善点を知る
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <a href="#service" class="btn btn--ghost">できることを見る</a>
       </div>
+      <div class="cta-micro anim a4"><span>サイトのURLを送るだけ</span><span>2営業日以内に返信</span><span>営業のご連絡はしません</span></div>
     </div>
     <div class="hero-fig anim a5" aria-hidden="true">
       <svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
@@ -533,7 +561,7 @@ img{max-width:100%;display:block}
     <p class="lead">ホームページは、公開した瞬間がゴールではありません。見つけてもらう設計と、問い合わせまでの導線が抜けていると、どれだけ見た目が良くても数字は動きません。</p>
     <ul class="problem-grid">
       <li><b>01</b><p>公開して半年経つが、問い合わせが1件も入っていない</p></li>
-      <li><b>02</b><p>制作会社の見積が高く、何にいくらかかるのか分からない</p></li>
+      <li><b>02</b><p>提案の優先順位や費用の根拠が分からず、投資判断ができない</p></li>
       <li><b>03</b><p>更新の仕方が分からず、情報が古いまま止まっている</p></li>
       <li><b>04</b><p>制作とSEOと広告で会社が別々になり、話が通らない</p></li>
     </ul>
@@ -545,13 +573,13 @@ img{max-width:100%;display:block}
   <div class="wrap reveal">
     <p class="eyebrow">SERVICE</p>
     <h2 class="h2">できること</h2>
-    <p class="lead">3つはすべて同じ人間が担当します。制作とSEOの担当が分かれないので、途中で意図が抜け落ちません。</p>
+    <p class="lead">制作・SEO・AI検索対策を別々に考えるのではなく、問い合わせにつながる一つの導線として設計します。すべて同じ担当者が対応するため、途中で目的や意図が抜け落ちません。</p>
     <div class="svc">
       <article>
         <span class="tag">01 — WEB</span>
         <h3>ホームページ制作</h3>
         <p>WordPressを中心に、更新しやすく問い合わせにつながる構成で設計します。スマートフォン表示と表示速度は制作時点で作り込みます。</p>
-        <a href="#contact" class="more">相談する
+        <a href="#contact" class="more">制作前にサイトの課題を相談する
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </article>
@@ -559,7 +587,7 @@ img{max-width:100%;display:block}
         <span class="tag">02 — SEO</span>
         <h3>SEOコンサルティング</h3>
         <p>キーワード設計から記事構成、既存記事のリライトまで。順位ではなく、問い合わせにつながる検索流入を増やすことを目的に進めます。</p>
-        <a href="#contact" class="more">相談する
+        <a href="#contact" class="more">検索流入の改善点を診断する
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </article>
@@ -567,7 +595,7 @@ img{max-width:100%;display:block}
         <span class="tag">03 — AIO</span>
         <h3>AI検索対策（AIO・LLMO）</h3>
         <p>ChatGPTなどのAIが情報源として引用しやすい構造にサイトを整えます。検索エンジンだけを見た対策では届かない層に接点をつくります。</p>
-        <a href="#contact" class="more">相談する
+        <a href="#contact" class="more">AI検索への対応状況を診断する
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </article>
@@ -586,7 +614,7 @@ img{max-width:100%;display:block}
       <div><p class="num">15<small>%</small></p><p class="cap">主要KW1位獲得率</p></div>
       <div><p class="num">16<small>年</small></p><p class="cap">SEO実務歴</p></div>
     </div>
-    <p class="note">2023年8月から18ヶ月間、企業オウンドメディア1媒体のSEOディレクションを担当した際の実績です。支援開始時点の月間セッション数は3万でした。記載の数値は同期間・同媒体の全データにもとづくもので、成果を保証するものではありません。</p>
+    <p class="note">キーワードの選定、記事構成、外部ライターの進行管理、既存記事の改善までを担当しました。記事数を増やすのではなく、検索意図とサイト全体の役割を整理したうえで、優先順位をつけて改善しています。<br><br>2023年8月から18ヶ月間、企業オウンドメディア1媒体のSEOディレクションを担当した際の実績です。支援開始時点の月間セッション数は3万でした。記載の数値は同期間・同媒体の全データにもとづくもので、成果を保証するものではありません。</p>
   </div>
 </section>
 
@@ -649,8 +677,8 @@ img{max-width:100%;display:block}
       </li>
       <li>
         <span class="rn">03</span>
-        <h3>修正が早い</h3>
-        <p>文言や画像の差し替え、色や余白の微調整といった軽微な修正は、回数を設けず柔軟に対応します。</p>
+        <h3>提案の根拠を、数字と構造で説明する</h3>
+        <p>「なんとなく良さそう」で決めません。ユーザーの行動、検索ニーズ、競合の状況をもとに、なぜこの構成にするのかを説明します。</p>
       </li>
       <li>
         <span class="rn">04</span>
@@ -659,8 +687,8 @@ img{max-width:100%;display:block}
       </li>
       <li>
         <span class="rn">05</span>
-        <h3>小規模事業者の予算感で組み立てる</h3>
-        <p>必要なものと後回しでよいものを分けて提案します。最初から全部そろえる必要はありません。</p>
+        <h3>限られた予算を、成果に近い順に配分する</h3>
+        <p>必要な施策を一度にすべて行うのではなく、効果と優先順位を整理して提案します。後回しにできるものは、最初の見積から外します。</p>
       </li>
     </ul>
   </div>
@@ -675,21 +703,52 @@ img{max-width:100%;display:block}
     <div class="flow">
       <article>
         <span class="fn">STEP 01</span>
-        <h3>構成</h3>
-        <p>目的とターゲットを整理し、ページ構成と各セクションの内容を決めます。ここで方向性をそろえます。</p>
+        <h3>現状整理・戦略設計</h3>
+        <p>事業の強み、ターゲット、競合、現在の集客経路を整理し、サイトに持たせる役割を決めます。</p>
       </article>
       <article>
         <span class="fn">STEP 02</span>
-        <h3>デザイン</h3>
-        <p>トップページのデザイン案を作成し、配色と写真の方針を確定します。下層ページはここで決めた型を展開します。</p>
+        <h3>構成・原稿設計</h3>
+        <p>検索ニーズと問い合わせまでの導線をもとに、ページ構成と各ページの内容を設計します。</p>
       </article>
       <article>
         <span class="fn">STEP 03</span>
-        <h3>実装・公開</h3>
-        <p>コーディングと動作確認を行い、サーバーへ公開します。更新方法の説明もこの段階で行います。</p>
+        <h3>デザイン・実装</h3>
+        <p>確定した構成をもとに制作を進め、スマートフォン表示や表示速度まで調整します。</p>
+      </article>
+      <article>
+        <span class="fn">STEP 04</span>
+        <h3>公開・改善</h3>
+        <p>動作確認後に公開し、更新方法とアクセス解析の見方をご説明します。公開後の改善も支援します。</p>
       </article>
     </div>
     <p class="flow-note">文言や画像の差し替え、色・余白・文字サイズの微調整は回数を設けず対応します。デザインやレイアウト、構成そのものの変更、および承認済み工程のやり直しは、別途お見積りとなります。</p>
+  </div>
+</section>
+
+<!-- ASSURANCE -->
+<section class="section" id="assure">
+  <div class="wrap reveal">
+    <p class="eyebrow">COMMITMENT</p>
+    <h2 class="h2">個人への依頼だからこそ、<br>進め方を曖昧にしません。</h2>
+    <p class="lead">ご契約前に、対応範囲・納期・費用・修正条件を書面で明確にします。制作中は工程ごとに内容をご確認いただき、承認後に次へ進みます。</p>
+    <div class="assure">
+      <article>
+        <span class="an">01</span>
+        <h3>見積の内訳を明確にする</h3>
+        <p>何に、なぜ費用がかかるのかを説明します。不要だと判断した施策は見積に含めません。</p>
+      </article>
+      <article>
+        <span class="an">02</span>
+        <h3>対応範囲を書面で決める</h3>
+        <p>作業範囲、納期、修正の条件を着手前に文書化します。後から範囲が曖昧になることを防ぎます。</p>
+      </article>
+      <article>
+        <span class="an">03</span>
+        <h3>公開後の窓口を残す</h3>
+        <p>公開して終わりにせず、更新方法の共有と、その後の相談先としての窓口を維持します。</p>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -698,10 +757,10 @@ img{max-width:100%;display:block}
   <div class="wrap reveal">
     <p class="eyebrow">PRICE</p>
     <h2 class="h2">料金プラン</h2>
-    <p class="lead">ページ数や機能によって金額は変わります。目安としてお考えください。</p>
+    <p class="lead">料金は、ページを作る作業だけでなく、事業の整理、検索ニーズの調査、導線設計、原稿構成、実装、公開後の支援範囲をもとに算出します。不要な施策は勧めず、成果に近いものから優先順位をつけてお見積りします。</p>
     <div class="plans">
       <article class="plan">
-        <h3>ライト</h3>
+        <h3>立ち上げ</h3>
         <p class="price">10<small>万円〜</small></p>
         <p class="tax">税込 / 制作期間の目安 2〜3週間</p>
         <ul>
@@ -715,7 +774,7 @@ img{max-width:100%;display:block}
       </article>
       <article class="plan plan--rec">
         <span class="badge">おすすめ</span>
-        <h3>スタンダード</h3>
+        <h3>集客設計</h3>
         <p class="price">20<small>万円〜</small></p>
         <p class="tax">税込 / 制作期間の目安 4〜6週間</p>
         <ul>
@@ -728,11 +787,11 @@ img{max-width:100%;display:block}
         </ul>
       </article>
       <article class="plan">
-        <h3>プレミアム</h3>
+        <h3>検索・AI成長</h3>
         <p class="price">30<small>万円〜</small></p>
         <p class="tax">税込 / 制作期間の目安 6〜10週間</p>
         <ul>
-          <li>スタンダードの内容すべて</li>
+          <li>集客設計プランの内容すべて</li>
           <li>SEO記事の初期5本を納品</li>
           <li>AI検索向けの構造化対応</li>
           <li>公開後3ヶ月の運用サポート</li>
@@ -740,6 +799,12 @@ img{max-width:100%;display:block}
           <li>写真撮影ディレクション</li>
         </ul>
       </article>
+    </div>
+    <div class="pitch">
+      <p>最安値でホームページを作ることだけを重視する方には向いていません。事業を理解したうえで、公開後も問い合わせにつながる土台をつくりたい方に向いています。</p>
+      <a href="#contact" class="btn btn--solid">必要なプランを無料診断で確認する
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
     <p class="price-note">記載の金額は税込です。ページ数の追加、独自機能の開発、写真撮影、ロゴ制作などが必要な場合は別途お見積りとなります。サーバー代・ドメイン代はお客様のご負担です。着手時に50%、納品時に50%のお支払いをお願いしています。</p>
   </div>
@@ -793,6 +858,16 @@ img{max-width:100%;display:block}
     <p class="eyebrow" style="justify-content:center">CONTACT</p>
     <h2>まずは、いまのサイトの<br>課題を無料で診断します。</h2>
     <p>診断だけのご利用でも構いません。営業のご連絡はしていません。<br>2営業日以内にご返信します。</p>
+    <div class="diag">
+      <h3>無料診断でお伝えすること</h3>
+      <ul>
+        <li>検索で見つかりにくくなっている原因</li>
+        <li>問い合わせにつながりにくい箇所</li>
+        <li>AI検索で引用されるために不足している情報</li>
+        <li>全面リニューアルが必要か、部分的な改善で足りるか</li>
+      </ul>
+      <p>作り直す必要がない場合は、その旨を率直にお伝えします。内容を確認し、2営業日以内にご連絡します。</p>
+    </div>
     <div class="form">
       <div>
         <label for="f-name">お名前</label>
@@ -803,17 +878,12 @@ img{max-width:100%;display:block}
         <input type="email" id="f-mail" autocomplete="email" placeholder="info@example.com">
       </div>
       <div>
-        <label for="f-type">ご相談の種類</label>
-        <select id="f-type">
-          <option>ホームページを新しく作りたい</option>
-          <option>いまのサイトを改善したい</option>
-          <option>SEO・集客について相談したい</option>
-          <option>AI検索対策について相談したい</option>
-          <option>その他</option>
-        </select>
+        <label for="f-url">診断を希望するサイトのURL</label>
+        <input type="url" id="f-url" autocomplete="url" placeholder="https://example.com">
+        <p style="font-size:12px;color:#8D96A3;margin-top:9px">サイトをお持ちでない場合は「なし」とご入力ください。</p>
       </div>
       <div>
-        <label for="f-body">ご相談内容</label>
+        <label for="f-body">現在困っていること</label>
         <textarea id="f-body" placeholder="現在の状況やお困りごとをお書きください。"></textarea>
       </div>
       <button type="button" class="btn btn--light submit" id="submitBtn">無料診断を申し込む</button>
@@ -840,7 +910,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-05c</span>
+      <span>BUILD 2026-08-05d</span>
     </div>
   </div>
 </footer>
