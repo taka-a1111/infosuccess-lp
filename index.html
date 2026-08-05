@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-05d -->
+<!-- BUILD_TAG: 2026-08-05e -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -20,14 +20,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FFFFFF;
-  --paper2:#F7F6F3;
-  --ink:#14181F;
-  --accent:#1C3D5A;
-  --text:#1A1A1A;
-  --sub:#5A5A5A;
-  --line:#E3E1DC;
-  --line-dark:#2C333D;
+  --paper:#FDFCFA;
+  --paper2:#F4F2EC;
+  --paper3:#EDEAE3;
+  --ink:#111621;
+  --ink2:#1B2331;
+  --accent:#173B57;
+  --accent-deep:#0C2437;
+  --accent-soft:#E7EDF2;
+  --text:#171A1F;
+  --sub:#585C63;
+  --line:#E0DDD6;
+  --line2:#CFCBC2;
+  --line-dark:#293141;
   --serif:"Yu Mincho",YuMincho,"Hiragino Mincho ProN","Shippori Mincho","Noto Serif JP","MS PMincho",serif;
   --sans:"Yu Gothic",YuGothic,"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,"MS PGothic",sans-serif;
   --num:"Inter","Yu Gothic",sans-serif;
@@ -69,7 +74,7 @@ img{max-width:100%;display:block}
   display:flex;align-items:center;gap:14px;
   margin-bottom:26px;
 }
-.eyebrow::after{content:"";flex:1;height:1px;background:var(--line);max-width:120px}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line2);max-width:120px}
 .section--dark .eyebrow{color:#8D96A3}
 .section--dark .eyebrow::after{background:var(--line-dark)}
 
@@ -94,11 +99,16 @@ img{max-width:100%;display:block}
   border-bottom:1px solid transparent;
 }
 .site-header.scrolled{
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(8px);
-  padding:14px min(6vw,48px);
+  background:rgba(253,252,250,.93);
+  backdrop-filter:saturate(140%) blur(10px);
+  padding:13px min(6vw,48px);
   border-bottom-color:var(--line);
 }
+.site-header::after{
+  content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;
+  background:var(--accent);transition:width .9s cubic-bezier(.22,.7,.2,1);
+}
+.site-header.scrolled::after{width:100%}
 .logo{font-family:var(--serif);font-size:19px;letter-spacing:.14em;font-weight:600}
 .logo span{
   display:block;font-family:var(--num);font-size:9px;letter-spacing:.24em;
@@ -108,11 +118,11 @@ img{max-width:100%;display:block}
 .gnav a{font-size:13px;letter-spacing:.06em;color:var(--text);transition:opacity .3s}
 .gnav a:hover{opacity:.55}
 .nav-cta{
-  border:1px solid var(--accent);color:var(--accent);
-  padding:10px 22px;font-size:13px;letter-spacing:.06em;
-  transition:background .3s,color .3s;
+  background:var(--accent);border:1px solid var(--accent);color:#fff;
+  padding:11px 24px;font-size:13px;letter-spacing:.06em;
+  transition:background .3s,border-color .3s;
 }
-.nav-cta:hover{background:var(--accent);color:#fff}
+.nav-cta:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
 .burger{display:none;width:30px;height:20px;position:relative;background:none;border:0;cursor:pointer}
 .burger span{position:absolute;left:0;width:100%;height:1px;background:var(--text);transition:transform .35s,opacity .35s}
 .burger span:nth-child(1){top:0}
@@ -192,13 +202,14 @@ img{max-width:100%;display:block}
 }
 .scroll-cue i{display:block;width:1px;height:44px;background:linear-gradient(#D6D3CB,transparent)}
 .btn{
-  display:inline-flex;align-items:center;gap:12px;
-  padding:19px 38px;font-size:14px;letter-spacing:.08em;
-  border:1px solid var(--accent);transition:background .35s,color .35s,transform .35s;
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  padding:21px 40px;font-size:14.5px;letter-spacing:.08em;font-weight:500;
+  border:1px solid var(--accent);position:relative;overflow:hidden;
+  transition:background .35s,color .35s,border-color .35s;
 }
 .btn svg{width:15px;height:15px;flex:none}
 .btn--solid{background:var(--accent);color:#fff}
-.btn--solid:hover{background:var(--ink);border-color:var(--ink)}
+.btn--solid:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
 .btn--ghost{color:var(--accent)}
 .btn--ghost:hover{background:var(--accent);color:#fff}
 .btn--light{background:#fff;color:var(--ink);border-color:#fff}
@@ -323,6 +334,29 @@ img{max-width:100%;display:block}
 .flow p{font-size:14px;color:var(--sub);line-height:2}
 .flow-note{margin-top:32px;font-size:13.5px;color:var(--sub);line-height:2.05;border-left:1px solid var(--accent);padding-left:22px}
 
+/* ---------- trust bar ---------- */
+.trust{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-grid div{padding:30px 24px;border-left:1px solid var(--line)}
+.trust-grid div:first-child{border-left:0}
+.trust-grid .tv{font-family:var(--num);font-size:26px;font-weight:300;color:var(--accent-deep);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.trust-grid .tv span{font-size:.52em;margin-left:4px;letter-spacing:.04em}
+.trust-grid .tl{font-size:12.5px;color:var(--sub);margin-top:8px;letter-spacing:.05em}
+
+/* ---------- inline cta ---------- */
+.inline-cta{
+  margin-top:56px;padding:34px 38px;background:var(--accent-soft);
+  display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;
+}
+.inline-cta p{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.05em;color:var(--accent-deep);line-height:1.7}
+.inline-cta .btn{flex:none}
+
+/* ---------- diagnosis steps ---------- */
+.dsteps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);margin:0 auto 42px;max-width:560px}
+.dsteps div{background:var(--ink);padding:22px 18px;text-align:center}
+.dsteps .dn{font-family:var(--num);font-size:10px;letter-spacing:.18em;color:#6E7885;display:block;margin-bottom:9px}
+.dsteps .dt{font-size:13.5px;color:#E4E7EB;line-height:1.7}
+
 /* ---------- assurance ---------- */
 .assure{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px;border-top:1px solid var(--line)}
 .assure article{padding:36px 32px 32px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
@@ -350,13 +384,13 @@ img{max-width:100%;display:block}
 /* ---------- price ---------- */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;align-items:end}
 .plan{border:1px solid var(--line);padding:40px 30px 34px;background:#fff;position:relative}
-.plan--rec{border:1px solid var(--accent);padding-top:56px;padding-bottom:44px}
+.plan--rec{border:1px solid var(--accent);padding-top:58px;padding-bottom:46px;box-shadow:0 0 0 4px var(--accent-soft)}
 .plan .badge{
   position:absolute;top:0;left:0;background:var(--accent);color:#fff;
   font-size:11px;letter-spacing:.14em;padding:7px 16px;
 }
 .plan h3{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.08em;margin-bottom:16px}
-.plan .price{font-family:var(--num);font-size:34px;font-weight:300;letter-spacing:-.01em}
+.plan .price{font-family:var(--num);font-size:38px;font-weight:300;letter-spacing:-.015em;color:var(--accent-deep);font-variant-numeric:tabular-nums}
 .plan .price small{font-size:.4em;letter-spacing:.04em;margin-left:5px;color:var(--sub)}
 .plan .tax{font-size:11.5px;color:var(--sub);margin-top:6px}
 .plan ul{margin-top:26px;border-top:1px solid var(--line);padding-top:22px}
@@ -426,7 +460,9 @@ img{max-width:100%;display:block}
   .side-index{display:none}
   .hero .wrap{grid-template-columns:1fr;gap:52px}
   .hero-fig{max-width:320px}
-  .svc,.works,.flow,.plans,.metrics,.assure{grid-template-columns:repeat(2,1fr)}
+  .svc,.works,.flow,.plans,.metrics,.assure,.trust-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-grid div:nth-child(3){border-left:0}
+  .trust-grid div:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .assure article:nth-child(3){border-left:1px solid var(--line)}
   .svc article:nth-child(3){border-left:1px solid var(--line)}
   .profile{grid-template-columns:1fr;gap:34px}
@@ -463,6 +499,11 @@ img{max-width:100%;display:block}
   .problem-grid li:nth-child(odd){border-right:0;padding-right:0}
   .problem-grid li:nth-child(even){padding-left:0}
   .svc,.works,.flow,.plans,.assure{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-grid div{padding:22px 16px}
+  .inline-cta{flex-direction:column;align-items:stretch;padding:28px 24px;text-align:center}
+  .inline-cta .btn{width:100%}
+  .dsteps{grid-template-columns:1fr}
   .assure article,.assure article:nth-child(3){border-left:1px solid var(--line)}
   .svc article,.svc article:nth-child(3){border-left:1px solid var(--line)}
   .plan--rec{padding-top:52px}
@@ -551,6 +592,18 @@ img{max-width:100%;display:block}
   </div>
   <div class="hero-meta">WEB / SEO / AIO — NAGOYA</div>
   <div class="scroll-cue"><span>SCROLL</span><i></i></div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trust" aria-label="実績サマリー">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div><p class="tv">16<span>年</span></p><p class="tl">SEO実務歴</p></div>
+      <div><p class="tv">12<span>年</span></p><p class="tl">Web制作歴</p></div>
+      <div><p class="tv">1<span>級</span></p><p class="tl">SEO検定</p></div>
+      <div><p class="tv">47<span>都道府県</span></p><p class="tl">オンラインで全国対応</p></div>
+    </div>
+  </div>
 </section>
 
 <!-- PROBLEM -->
@@ -656,6 +709,12 @@ img{max-width:100%;display:block}
         <p>キーワード設計から記事構成、外部ライターの管理までを一貫して担当。18ヶ月で120記事を納品。</p>
       </article>
     </div>
+    <div class="inline-cta">
+      <p>自社サイトにも、<br>改善できる余地があるか確認しませんか。</p>
+      <a href="#contact" class="btn btn--solid">無料で診断を依頼する
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -691,6 +750,12 @@ img{max-width:100%;display:block}
         <p>必要な施策を一度にすべて行うのではなく、効果と優先順位を整理して提案します。後回しにできるものは、最初の見積から外します。</p>
       </li>
     </ul>
+    <div class="inline-cta">
+      <p>まずは、いまのサイトの課題を<br>相談するところから。</p>
+      <a href="#contact" class="btn btn--solid">無料で相談する
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -858,6 +923,11 @@ img{max-width:100%;display:block}
     <p class="eyebrow" style="justify-content:center">CONTACT</p>
     <h2>まずは、いまのサイトの<br>課題を無料で診断します。</h2>
     <p>診断だけのご利用でも構いません。営業のご連絡はしていません。<br>2営業日以内にご返信します。</p>
+    <div class="dsteps">
+      <div><span class="dn">STEP 01</span><span class="dt">フォームを送信<br>入力は30秒</span></div>
+      <div><span class="dn">STEP 02</span><span class="dt">サイトを確認<br>2営業日以内</span></div>
+      <div><span class="dn">STEP 03</span><span class="dt">診断結果を返信<br>費用は無料</span></div>
+    </div>
     <div class="diag">
       <h3>無料診断でお伝えすること</h3>
       <ul>
@@ -887,6 +957,7 @@ img{max-width:100%;display:block}
         <textarea id="f-body" placeholder="現在の状況やお困りごとをお書きください。"></textarea>
       </div>
       <button type="button" class="btn btn--light submit" id="submitBtn">無料診断を申し込む</button>
+      <p style="font-size:12px;color:#8D96A3;text-align:center;margin-top:4px;line-height:1.9">お預かりした情報は診断の目的以外に使用しません。<br>営業のご連絡や、メールマガジンの配信は行いません。</p>
     </div>
   </div>
 </section>
@@ -910,14 +981,14 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-05d</span>
+      <span>BUILD 2026-08-05e</span>
     </div>
   </div>
 </footer>
 
 <div class="sp-cta">
-  <a href="#service" class="s">サービス</a>
-  <a href="#contact" class="p">無料サイト診断</a>
+  <a href="#price" class="s">料金を見る</a>
+  <a href="#contact" class="p">無料でサイト診断</a>
 </div>
 
 <script type="application/ld+json">
