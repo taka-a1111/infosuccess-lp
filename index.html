@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-05l -->
+<!-- BUILD_TAG: 2026-08-05m -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -307,43 +307,33 @@ img{max-width:100%;display:block}
 }
 
 /* ---------- works ---------- */
-.works{display:grid;grid-template-columns:repeat(3,1fr);gap:38px;margin-top:56px}
-.works article{cursor:default}
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 32px;margin-top:56px}
+.works article a{display:block}
 .work-shot{
   border:1px solid var(--line);background:var(--paper2);
   aspect-ratio:4/3;position:relative;overflow:hidden;
-  transition:border-color .45s ease,background .45s ease;
+  transition:border-color .45s ease;
 }
-.works article:hover .work-shot{border-color:var(--accent);background:#fff}
-.shot-bar{position:absolute;top:0;left:0;right:0;height:1px;background:var(--line)}
-.shot-bar i{display:none}
-.shot-body{
-  position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:0;
+.work-shot img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  display:block;transition:transform .8s cubic-bezier(.22,.7,.2,1),filter .5s ease;
+  filter:saturate(.94);
 }
-.shot-body .l{display:none}
-.shot-mark{
-  width:64px;height:64px;border:1px solid #D6D3CB;position:relative;
-  transition:border-color .45s ease,transform .55s cubic-bezier(.22,.7,.2,1);
-}
-.shot-mark::before{
-  content:"";position:absolute;left:50%;top:-1px;bottom:-1px;width:1px;
-  background:#D6D3CB;transition:background .45s ease;
-}
-.shot-mark::after{
-  content:"";position:absolute;left:-1px;right:-1px;top:50%;height:1px;
-  background:#D6D3CB;transition:background .45s ease;
-}
-.works article:hover .shot-mark{border-color:var(--accent);transform:rotate(45deg)}
-.works article:hover .shot-mark::before,
-.works article:hover .shot-mark::after{background:var(--accent)}
+.works article:hover .work-shot{border-color:var(--accent)}
+.works article:hover .work-shot img{transform:scale(1.035);filter:saturate(1)}
 .shot-no{
-  font-family:var(--num);font-size:10px;letter-spacing:.2em;color:#B9B6AE;
-  position:absolute;left:16px;top:14px;
+  font-family:var(--num);font-size:10px;letter-spacing:.2em;color:#fff;
+  position:absolute;left:0;top:0;background:var(--ink);padding:6px 11px;z-index:2;
 }
-.works h3{font-family:var(--serif);font-size:18px;font-weight:600;margin:26px 0 10px;letter-spacing:.06em;line-height:1.65}
+.works h3{
+  font-family:var(--serif);font-size:17.5px;font-weight:600;margin:22px 0 9px;
+  letter-spacing:.05em;line-height:1.65;display:flex;align-items:baseline;gap:9px;
+}
+.works h3 svg{width:12px;height:12px;flex:none;stroke:var(--accent);opacity:0;transform:translate(-3px,3px);transition:opacity .35s,transform .35s}
+.works article:hover h3 svg{opacity:1;transform:none}
 .works .cat{font-family:var(--num);font-size:10px;letter-spacing:.18em;color:var(--sub)}
-.works p{font-size:14px;color:var(--sub);line-height:2}
+.works p{font-size:13.5px;color:var(--sub);line-height:1.95}
+.works .host{font-family:var(--num);font-size:11px;color:#A8A49B;letter-spacing:.04em;margin-top:9px}
 
 /* ---------- reasons ---------- */
 .reasons{margin-top:52px;border-top:1px solid var(--line)}
@@ -590,7 +580,7 @@ img{max-width:100%;display:block}
   .scroll-cue{display:none}
   .hero .wrap{gap:40px}
   .hero-fig{max-width:270px}
-  .works{gap:40px}
+  .works{gap:36px}
   .hero p{margin-bottom:34px}
   .hero-actions{flex-direction:column;align-items:stretch}
   .btn{justify-content:center;padding:17px 24px}
@@ -792,37 +782,79 @@ img{max-width:100%;display:block}
   <div class="wrap reveal">
     <p class="eyebrow">WORKS</p>
     <h2 class="h2">制作実績</h2>
-    <p class="lead">守秘義務のある案件は、業種とジャンルのみを掲載しています。</p>
+    <p class="lead">クライアントの許諾を得て掲載しています。カードをクリックすると公開中のサイトが開きます。</p>
     <div class="works stagger">
       <article>
-        <div class="work-shot">
-          <div class="shot-bar"></div>
-          <span class="shot-no">01</span>
-          <div class="shot-body"><span class="shot-mark"></span></div>
-        </div>
-        <p class="cat">CARE / WORDPRESS</p>
-        <h3>介護施設のホームページ制作</h3>
-        <p>広島県福山市。ご家族が安心して問い合わせできる導線と、職員が自分で更新できる構成に。</p>
+        <a href="https://athlix2026.com" target="_blank" rel="noopener">
+          <div class="work-shot">
+            <span class="shot-no">01</span>
+            <img src="./works/athlix.webp" width="900" height="675" loading="lazy" decoding="async" alt="株式会社ATHLIXのWebサイト">
+          </div>
+          <p class="cat">CORPORATE / WEB</p>
+          <h3>株式会社ATHLIX<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></h3>
+          <p>スポーツ経済圏を軸にした事業を、暗色ベースの世界観で表現。コーポレートサイトを新規制作。</p>
+          <p class="host">athlix2026.com</p>
+        </a>
       </article>
       <article>
-        <div class="work-shot">
-          <div class="shot-bar"></div>
-          <span class="shot-no">02</span>
-          <div class="shot-body"><span class="shot-mark"></span></div>
-        </div>
-        <p class="cat">NPO / WORDPRESS</p>
-        <h3>NPO法人のサイト新規制作</h3>
-        <p>子育て支援団体。活動報告を継続的に発信できる設計と、独自ドメインへの移行までを担当。</p>
+        <a href="https://breakthrough-co.jp/cosmos/" target="_blank" rel="noopener">
+          <div class="work-shot">
+            <span class="shot-no">02</span>
+            <img src="./works/cosmos.webp" width="900" height="675" loading="lazy" decoding="async" alt="コスモスの里のWebサイト">
+          </div>
+          <p class="cat">CARE / WORDPRESS</p>
+          <h3>コスモスの里<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></h3>
+          <p>広島県福山市のグループホーム。ご家族が安心して問い合わせできる導線と、職員が自分で更新できる構成に。</p>
+          <p class="host">breakthrough-co.jp</p>
+        </a>
       </article>
       <article>
-        <div class="work-shot">
-          <div class="shot-bar"></div>
-          <span class="shot-no">03</span>
-          <div class="shot-body"><span class="shot-mark"></span></div>
-        </div>
-        <p class="cat">MEDIA / SEO</p>
-        <h3>企業オウンドメディアのSEO支援</h3>
-        <p>キーワード設計から記事構成、外部ライターの管理までを一貫して担当。18ヶ月で120記事を納品。</p>
+        <a href="https://russia-suisan.com" target="_blank" rel="noopener">
+          <div class="work-shot">
+            <span class="shot-no">03</span>
+            <img src="./works/russia.webp" width="900" height="675" loading="lazy" decoding="async" alt="ロシア水産株式会社のWebサイト">
+          </div>
+          <p class="cat">TRADING / WORDPRESS</p>
+          <h3>ロシア水産株式会社<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></h3>
+          <p>東京・築地の水産物輸入卸。取扱商品と企業信用が伝わる構成で設計。</p>
+          <p class="host">russia-suisan.com</p>
+        </a>
+      </article>
+      <article>
+        <a href="https://legends1999.net" target="_blank" rel="noopener">
+          <div class="work-shot">
+            <span class="shot-no">04</span>
+            <img src="./works/legends.webp" width="900" height="675" loading="lazy" decoding="async" alt="有限会社レジェンズのWebサイト">
+          </div>
+          <p class="cat">CONSTRUCTION / WEB</p>
+          <h3>有限会社レジェンズ<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></h3>
+          <p>大阪の電気設備・空調工事会社。施工内容と対応エリアを整理し、採用にも使える構成に。</p>
+          <p class="host">legends1999.net</p>
+        </a>
+      </article>
+      <article>
+        <a href="https://mizukamikougei.com" target="_blank" rel="noopener">
+          <div class="work-shot">
+            <span class="shot-no">05</span>
+            <img src="./works/mizukami.webp" width="900" height="675" loading="lazy" decoding="async" alt="水上工芸株式会社のWebサイト">
+          </div>
+          <p class="cat">CONSTRUCTION / WEB</p>
+          <h3>水上工芸株式会社<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></h3>
+          <p>三重県伊勢市の建具工事・キズ補修。職人の技術が伝わる写真主体のレイアウト。</p>
+          <p class="host">mizukamikougei.com</p>
+        </a>
+      </article>
+      <article>
+        <a href="https://salonde-kids.net" target="_blank" rel="noopener">
+          <div class="work-shot">
+            <span class="shot-no">06</span>
+            <img src="./works/salonde.webp" width="900" height="675" loading="lazy" decoding="async" alt="サロンドキッズのWebサイト">
+          </div>
+          <p class="cat">NPO / WORDPRESS</p>
+          <h3>サロンドキッズ<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></h3>
+          <p>奈良県天理市の地域子育て支援センター。活動報告を継続発信できる設計と、独自ドメインへの移行まで担当。</p>
+          <p class="host">salonde-kids.net</p>
+        </a>
       </article>
     </div>
     <div class="inline-cta">
@@ -1097,7 +1129,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-05l</span>
+      <span>BUILD 2026-08-05m</span>
     </div>
   </div>
 </footer>
