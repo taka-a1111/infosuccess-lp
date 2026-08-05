@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-05k -->
+<!-- BUILD_TAG: 2026-08-05l -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -487,6 +487,24 @@ img{max-width:100%;display:block}
 .ft-nav a:hover{color:#F2F1EE}
 .ft-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;font-family:var(--num);font-size:10.5px;letter-spacing:.12em}
 
+/* ---------- back to top ---------- */
+.to-top{
+  position:fixed;right:32px;bottom:32px;z-index:78;
+  width:54px;height:54px;border:1px solid var(--line2);background:rgba(253,252,250,.92);
+  backdrop-filter:blur(6px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  cursor:pointer;padding:0;
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .4s ease,transform .4s cubic-bezier(.22,.7,.2,1),visibility .4s,border-color .3s,background .3s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top svg{width:15px;height:15px;stroke:var(--accent);transition:transform .35s cubic-bezier(.22,.7,.2,1)}
+.to-top span{
+  font-family:var(--num);font-size:8px;letter-spacing:.14em;color:var(--sub);
+}
+.to-top:hover{border-color:var(--accent);background:#fff}
+.to-top:hover svg{transform:translateY(-3px)}
+
 /* ---------- sticky sp cta ---------- */
 .sp-cta{display:none}
 
@@ -523,6 +541,8 @@ img{max-width:100%;display:block}
   .rule-draw{transform:none;transition:none}
   .progress{display:none}
   .btn::before{display:none}
+  .to-top{transition:opacity .01s,visibility .01s}
+  .to-top svg{transition:none}
   .hero h1 .ln{opacity:1;transform:none;animation:none}
   html{scroll-behavior:auto}
 }
@@ -599,6 +619,11 @@ img{max-width:100%;display:block}
   .sp-cta .p{background:#fff;color:var(--ink)}
   .sp-cta .s{border:1px solid #4A535F;color:#F2F1EE}
   .site-footer{padding-bottom:96px}
+  .to-top{
+    right:14px;bottom:78px;width:44px;height:44px;gap:2px;
+  }
+  .to-top svg{width:13px;height:13px}
+  .to-top span{font-size:7.5px}
   .ft-nav{gap:18px}
 }
 @media (max-width:480px){
@@ -1072,10 +1097,15 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-05k</span>
+      <span>BUILD 2026-08-05l</span>
     </div>
   </div>
 </footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="ページ上部へ戻る">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  <span>TOP</span>
+</button>
 
 <div class="sp-cta">
   <a href="#price" class="s">料金を見る</a>
@@ -1220,6 +1250,11 @@ img{max-width:100%;display:block}
 
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  var toTop=document.getElementById('toTop');
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+  });
+
   var progress=document.getElementById('progress');
   var ticking=false;
   function updateProgress(){
@@ -1227,14 +1262,13 @@ img{max-width:100%;display:block}
     var max=doc.scrollHeight-window.innerHeight;
     var r=max>0?Math.min(window.scrollY/max,1):0;
     progress.style.transform='scaleX('+r.toFixed(4)+')';
+    toTop.classList.toggle('show',window.scrollY>600);
     ticking=false;
   }
-  if(!reduce){
-    window.addEventListener('scroll',function(){
-      if(!ticking){ window.requestAnimationFrame(updateProgress); ticking=true; }
-    },{passive:true});
-    updateProgress();
-  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){ window.requestAnimationFrame(updateProgress); ticking=true; }
+  },{passive:true});
+  updateProgress();
 
   function runCounter(el){
     if(el.dataset.done) return;
