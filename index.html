@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-05f -->
+<!-- BUILD_TAG: 2026-08-05g -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -484,10 +484,16 @@ img{max-width:100%;display:block}
 @media (max-width:768px){
   :root{--pad:72px}
   body{font-size:15px}
+  .site-header.scrolled{
+    backdrop-filter:none;-webkit-backdrop-filter:none;
+    background:rgba(253,252,250,.98);
+  }
   .gnav{
-    position:fixed;inset:0;background:var(--paper);
+    position:fixed;top:0;left:0;width:100%;height:100vh;height:100dvh;
+    background:var(--paper);
     flex-direction:column;justify-content:center;gap:30px;
     transform:translateX(100%);transition:transform .45s cubic-bezier(.4,0,.2,1);
+    overscroll-behavior:contain;
   }
   .gnav.open{transform:none}
   .gnav a{font-size:17px;font-family:var(--serif);letter-spacing:.1em}
@@ -989,7 +995,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-05f</span>
+      <span>BUILD 2026-08-05g</span>
     </div>
   </div>
 </footer>
@@ -1112,6 +1118,7 @@ img{max-width:100%;display:block}
 
   burger.addEventListener('click',function(){
     var open=gnav.classList.toggle('open');
+    document.body.classList.toggle('nav-open',open);
     burger.classList.toggle('open',open);
     burger.setAttribute('aria-expanded',open?'true':'false');
     burger.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');
@@ -1121,9 +1128,17 @@ img{max-width:100%;display:block}
     a.addEventListener('click',function(){
       gnav.classList.remove('open');
       burger.classList.remove('open');
+      document.body.classList.remove('nav-open');
       burger.setAttribute('aria-expanded','false');
       document.body.style.overflow='';
     });
+  });
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&gnav.classList.contains('open')){ burger.click(); }
+  });
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>768&&gnav.classList.contains('open')){ burger.click(); }
   });
 
   var io=new IntersectionObserver(function(entries){
