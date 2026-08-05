@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-05g -->
+<!-- BUILD_TAG: 2026-08-05h -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -434,14 +434,29 @@ img{max-width:100%;display:block}
 .cta-inner h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,36px);font-weight:600;line-height:1.65;letter-spacing:.04em;margin-bottom:22px}
 .cta-inner p{color:#A8B0BB;font-size:15px;line-height:2.05;margin-bottom:44px}
 .form{display:grid;gap:18px;max-width:560px;margin:0 auto;text-align:left}
-.form label{font-size:12px;letter-spacing:.1em;color:#A8B0BB;display:block;margin-bottom:9px}
-.form input,.form textarea,.form select{
-  width:100%;background:transparent;border:1px solid var(--line-dark);
-  padding:15px 16px;color:#F2F1EE;font-family:var(--sans);font-size:15px;
+.form label{
+  font-size:12.5px;letter-spacing:.09em;color:#D3D8DE;display:block;margin-bottom:10px;
+  display:flex;align-items:center;gap:9px;
 }
-.form input:focus,.form textarea:focus,.form select:focus{border-color:#6E7C8C;outline:none}
-.form textarea{min-height:120px;resize:vertical}
-.form .submit{margin-top:10px;justify-content:center;width:100%;cursor:pointer;font-family:var(--sans)}
+.form label::before{content:"";width:3px;height:12px;background:#5E8CB0;display:block}
+.form input,.form textarea{
+  width:100%;background:#F7F8FA;border:1px solid #F7F8FA;border-radius:2px;
+  padding:16px 16px;color:#171A1F;font-family:var(--sans);font-size:16px;
+  transition:border-color .25s ease,box-shadow .25s ease,background .25s ease;
+}
+.form input::placeholder,.form textarea::placeholder{color:#9AA0A8}
+.form input:hover,.form textarea:hover{background:#fff;border-color:#C3CBD4}
+.form input:focus,.form textarea:focus{
+  background:#fff;border-color:#5E8CB0;outline:none;
+  box-shadow:0 0 0 3px rgba(94,140,176,.28);
+}
+.form textarea{min-height:130px;resize:vertical;line-height:1.85}
+.form .req{
+  font-family:var(--num);font-size:10px;letter-spacing:.1em;color:#8D96A3;
+  margin-left:auto;font-weight:400;
+}
+.form .submit{margin-top:14px;justify-content:center;width:100%;cursor:pointer;font-family:var(--sans);font-size:15.5px;padding:22px 30px}
+.form-note{font-size:12.5px;color:#9AA2AC;margin-top:11px;line-height:1.95}
 
 /* ---------- footer ---------- */
 .site-footer{background:var(--ink);color:#8D96A3;padding:56px 0 40px;border-top:1px solid var(--line-dark)}
@@ -954,24 +969,24 @@ img{max-width:100%;display:block}
     </div>
     <div class="form">
       <div>
-        <label for="f-name">お名前</label>
+        <label for="f-name">お名前<span class="req">必須</span></label>
         <input type="text" id="f-name" autocomplete="name" placeholder="山田 太郎">
       </div>
       <div>
-        <label for="f-mail">メールアドレス</label>
+        <label for="f-mail">メールアドレス<span class="req">必須</span></label>
         <input type="email" id="f-mail" autocomplete="email" placeholder="info@example.com">
       </div>
       <div>
-        <label for="f-url">診断を希望するサイトのURL</label>
+        <label for="f-url">診断を希望するサイトのURL<span class="req">必須</span></label>
         <input type="url" id="f-url" autocomplete="url" placeholder="https://example.com">
-        <p style="font-size:12px;color:#8D96A3;margin-top:9px">サイトをお持ちでない場合は「なし」とご入力ください。</p>
+        <p class="form-note">サイトをお持ちでない場合は「なし」とご入力ください。</p>
       </div>
       <div>
-        <label for="f-body">現在困っていること</label>
+        <label for="f-body">現在困っていること<span class="req">任意</span></label>
         <textarea id="f-body" placeholder="現在の状況やお困りごとをお書きください。"></textarea>
       </div>
       <button type="button" class="btn btn--light submit" id="submitBtn">無料診断を申し込む</button>
-      <p style="font-size:12px;color:#8D96A3;text-align:center;margin-top:4px;line-height:1.9">お預かりした情報は診断の目的以外に使用しません。<br>営業のご連絡や、メールマガジンの配信は行いません。</p>
+      <p class="form-note" style="text-align:center;margin-top:6px">お預かりした情報は診断の目的以外に使用しません。<br>営業のご連絡や、メールマガジンの配信は行いません。</p>
     </div>
   </div>
 </section>
@@ -995,7 +1010,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-05g</span>
+      <span>BUILD 2026-08-05h</span>
     </div>
   </div>
 </footer>
