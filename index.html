@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-06e -->
+<!-- BUILD_TAG: 2026-08-06f -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -258,17 +258,16 @@ img{max-width:100%;display:block}
 }
 .checks li:hover{background:var(--paper3);padding-left:12px}
 .checks .box{
-  flex:none;width:19px;height:19px;border:1px solid var(--line2);
-  margin-top:5px;position:relative;transition:border-color .35s ease,background .35s ease;
+  flex:none;width:20px;height:20px;border:1px solid var(--accent);
+  background:var(--accent);margin-top:5px;position:relative;
+  transition:background .3s ease,border-color .3s ease;
 }
-.checks li:hover .box{border-color:var(--accent)}
 .checks .box::after{
-  content:"";position:absolute;left:5px;top:1px;width:6px;height:11px;
-  border-right:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);
-  transform:rotate(42deg) scale(0);transform-origin:center;
-  transition:transform .35s cubic-bezier(.22,.7,.2,1);
+  content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;
+  border-right:1.6px solid #fff;border-bottom:1.6px solid #fff;
+  transform:rotate(42deg);
 }
-.checks li:hover .box::after{transform:rotate(42deg) scale(1)}
+.checks li:hover .box{background:var(--accent-deep);border-color:var(--accent-deep)}
 .checks-note{
   margin-top:34px;font-size:15px;color:var(--text);line-height:1.95;
   border-left:1px solid var(--accent);padding:4px 0 4px 22px;
@@ -1278,7 +1277,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-06e</span>
+      <span>BUILD 2026-08-06f</span>
     </div>
   </div>
 </footer>
