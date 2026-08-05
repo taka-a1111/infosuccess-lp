@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-05y -->
+<!-- BUILD_TAG: 2026-08-05z -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -518,21 +518,12 @@ img{max-width:100%;display:block}
 .faq p{font-size:14.5px;color:var(--sub);line-height:2.05;padding-left:28px}
 
 /* ---------- profile ---------- */
-.profile{display:grid;grid-template-columns:152px 1fr;gap:40px;align-items:start;margin-top:52px}
-.pf-photo{
-  border:1px solid var(--line);aspect-ratio:3/4;background:var(--paper2);
-  overflow:hidden;position:relative;
-}
-.pf-photo img{
-  width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block;
-  filter:saturate(.94);transition:filter .6s ease,transform .8s cubic-bezier(.22,.7,.2,1);
-}
-.profile:hover .pf-photo img{filter:saturate(1);transform:scale(1.02)}
+.profile{margin-top:52px;max-width:760px}
 .profile h3{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.08em;margin-bottom:10px}
-.profile .role{font-size:13px;color:var(--sub);letter-spacing:.08em;margin-bottom:26px}
+.profile .role{font-size:13px;color:var(--sub);letter-spacing:.08em;margin-bottom:30px}
 .profile p{font-size:15px;color:var(--sub);line-height:2.15;margin-bottom:18px}
-.pf-list{margin-top:28px;border-top:1px solid var(--line)}
-.pf-list div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.pf-list{margin-top:36px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(2,1fr);column-gap:56px}
+.pf-list div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--line);font-size:13.5px}
 .pf-list dt{color:var(--sub);letter-spacing:.06em}
 
 /* ---------- cta ---------- */
@@ -643,9 +634,8 @@ img{max-width:100%;display:block}
   .trust-grid div:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .assure article:nth-child(3){border-left:1px solid var(--line)}
   .svc article:nth-child(3){border-left:1px solid var(--line)}
-  .profile{grid-template-columns:1fr;gap:34px}
-  .pf-photo{max-width:124px;aspect-ratio:3/4}
-  .reasons li{grid-template-columns:60px 1fr;gap:20px}
+  .pf-list{grid-template-columns:1fr;column-gap:0}
+    .reasons li{grid-template-columns:60px 1fr;gap:20px}
   .reasons p{grid-column:2}
   .metrics div{padding:22px 0 0}
   .metrics div:nth-child(odd){border-left:0}
@@ -1248,11 +1238,7 @@ img{max-width:100%;display:block}
     <p class="eyebrow">ABOUT</p>
     <h2 class="h2">運営者について</h2>
     <div class="profile">
-      <figure class="pf-photo">
-        <img src="./works/profile.webp" width="600" height="800" loading="lazy" decoding="async" alt="インフォサクセス 代表 高崎">
-      </figure>
-      <div>
-        <h3>高崎</h3>
+      <h3>高崎</h3>
         <p class="role">インフォサクセス 代表 / Webディレクター</p>
         <p>もともとはメーカーでソフトウェア開発に携わっていました。仕様を決め、検証し、数字で確かめる。その進め方は、当時に身についたものです。2011年に個人でメディアを立ち上げたことをきっかけに、Webの世界へ移りました。</p>
         <p>技術の側から入っているので、「なんとなく良さそう」ではなく、数字と構造で説明することを大事にしています。作って終わりにせず、公開後にどう育てるかまで一緒に考える相手を探している方に向いていると思います。</p>
@@ -1262,7 +1248,6 @@ img{max-width:100%;display:block}
           <div><dt>ライティング</dt><dd>実務歴15年</dd></div>
           <div><dt>Web制作</dt><dd>実務歴12年 / WordPress・HTML</dd></div>
           <div><dt>そのほか</dt><dd>Google Apps Scriptによる業務自動化の開発</dd></div>
-        </div>
       </div>
     </div>
   </div>
@@ -1332,7 +1317,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-05y</span>
+      <span>BUILD 2026-08-05z</span>
     </div>
   </div>
 </footer>
