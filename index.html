@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-06w -->
+<!-- BUILD_TAG: 2026-08-06x -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -439,13 +439,38 @@ img{max-width:100%;display:block}
 .flow-note{margin-top:32px;font-size:13.5px;color:var(--sub);line-height:2.05;border-left:1px solid var(--accent);padding-left:22px}
 
 /* ---------- trust bar ---------- */
-.trust{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-.trust-grid div{padding:30px 24px;border-left:1px solid var(--line)}
+.trust{background:var(--paper2);padding:26px 0}
+.trust-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:var(--paper);border:1px solid var(--line);
+}
+.trust-grid div{
+  padding:40px 20px 38px;text-align:center;border-left:1px solid var(--line);
+}
 .trust-grid div:first-child{border-left:0}
-.trust-grid .tv{font-family:var(--num);font-size:26px;font-weight:300;color:var(--accent-deep);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
-.trust-grid .tv span{font-size:.52em;margin-left:4px;letter-spacing:.04em}
-.trust-grid .tl{font-size:12.5px;color:var(--sub);margin-top:8px;letter-spacing:.05em}
+.tico{position:relative;width:74px;height:74px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center}
+.tico::before{
+  content:"";position:absolute;left:50%;top:50%;width:60px;height:60px;
+  margin:-30px 0 0 -30px;border-radius:50%;background:var(--paper3);
+}
+.tico svg{
+  position:relative;width:40px;height:40px;stroke:var(--accent);fill:none;
+  stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;
+}
+.trust-grid .tv{
+  font-family:var(--serif);font-size:clamp(38px,4vw,54px);font-weight:400;
+  color:var(--ink);letter-spacing:.02em;line-height:1;
+  display:flex;align-items:baseline;justify-content:center;gap:6px;
+}
+.trust-grid .tv small{font-size:.36em;letter-spacing:.06em;color:var(--text);font-weight:400}
+.trust-grid .tl{
+  font-size:14px;color:var(--text);margin-top:20px;letter-spacing:.06em;
+  position:relative;padding-top:20px;
+}
+.trust-grid .tl::before{
+  content:"";position:absolute;left:50%;top:0;width:34px;height:1px;
+  margin-left:-17px;background:var(--accent);opacity:.55;
+}
 
 /* ---------- inline cta ---------- */
 .inline-cta{
@@ -686,6 +711,7 @@ img{max-width:100%;display:block}
   .svc,.works,.flow,.plans,.metrics,.assure,.trust-grid{grid-template-columns:repeat(2,1fr)}
   .trust-grid div:nth-child(3){border-left:0}
   .trust-grid div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .trust-grid div{padding:32px 14px 30px}
   .assure article:nth-child(3){border-left:1px solid var(--line)}
   .svc article:nth-child(3){border-left:1px solid var(--line)}
   .pf-list{grid-template-columns:1fr;column-gap:0}
@@ -756,7 +782,11 @@ img{max-width:100%;display:block}
   .flow .ficon::before{width:58px;height:58px;margin:-29px 0 0 -29px}
   .flow .ficon svg{width:46px;height:46px}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
-  .trust-grid div{padding:22px 16px}
+  .trust-grid div{padding:26px 10px 24px}
+  .tico{width:56px;height:56px;margin-bottom:14px}
+  .tico::before{width:46px;height:46px;margin:-23px 0 0 -23px}
+  .tico svg{width:30px;height:30px}
+  .trust-grid .tl{font-size:12.5px;margin-top:14px;padding-top:14px}
   .inline-cta{flex-direction:column;align-items:stretch;padding:28px 24px;text-align:center}
   .inline-cta .btn{width:100%}
   .dsteps{grid-template-columns:1fr}
@@ -838,10 +868,26 @@ img{max-width:100%;display:block}
 <section class="trust" aria-label="実績サマリー">
   <div class="wrap">
     <div class="trust-grid">
-      <div><p class="tv"><span class="cnt" data-to="16">0</span><span>年</span></p><p class="tl">SEO実務歴</p></div>
-      <div><p class="tv"><span class="cnt" data-to="12">0</span><span>年</span></p><p class="tl">Web制作歴</p></div>
-      <div><p class="tv"><span class="cnt" data-to="1">0</span><span>級</span></p><p class="tl">SEO検定</p></div>
-      <div><p class="tv"><span class="cnt" data-to="47">0</span><span>都道府県</span></p><p class="tl">オンラインで全国対応</p></div>
+      <div>
+        <span class="tico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.6 15.6L21 21"/><path d="M7.5 12.5v-2M10.5 12.5v-4M13.5 12.5v-6"/></svg></span>
+        <p class="tv"><span class="cnt" data-to="16">0</span><small>年</small></p>
+        <p class="tl">SEO実務歴</p>
+      </div>
+      <div>
+        <span class="tico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16"/><path d="M2.5 8h19"/><circle cx="5.5" cy="6" r=".6"/><circle cx="7.8" cy="6" r=".6"/><rect x="5" y="10.5" width="6" height="6.5"/><path d="M13 10.5h6M13 13.5h6"/></svg></span>
+        <p class="tv"><span class="cnt" data-to="12">0</span><small>年</small></p>
+        <p class="tl">Web制作歴</p>
+      </div>
+      <div>
+        <span class="tico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5h9l5 5v9.5"/><path d="M5 2.5v19h6"/><path d="M14 2.5v5h5"/><path d="M7.5 8h4M7.5 11h7M7.5 14h5"/><circle cx="17" cy="17" r="3.2"/><path d="M15.4 19.8L15 23l2-1.2 2 1.2-.4-3.2"/></svg></span>
+        <p class="tv"><span class="cnt" data-to="1">0</span><small>級</small></p>
+        <p class="tl">SEO検定</p>
+      </div>
+      <div>
+        <span class="tico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s6.5-6.1 6.5-10.5a6.5 6.5 0 10-13 0C5.5 15.4 12 21.5 12 21.5z"/><circle cx="12" cy="10.8" r="2.4"/></svg></span>
+        <p class="tv"><span class="cnt" data-to="47">0</span><small>都道府県</small></p>
+        <p class="tl">オンラインで全国対応</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1344,7 +1390,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-06w</span>
+      <span>BUILD 2026-08-06x</span>
     </div>
   </div>
 </footer>
