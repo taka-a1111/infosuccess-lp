@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-06k -->
+<!-- BUILD_TAG: 2026-08-06l -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -251,9 +251,19 @@ img{max-width:100%;display:block}
 /* ---------- services ---------- */
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line)}
 .svc article{
-  padding:44px 34px 40px;border-bottom:1px solid var(--line);
+  padding:0 0 40px;border-bottom:1px solid var(--line);
   border-right:1px solid var(--line);transition:background .4s;
 }
+.svc-photo{
+  aspect-ratio:3/2;overflow:hidden;background:var(--paper3);
+  border-bottom:1px solid var(--line);
+}
+.svc-photo img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .8s cubic-bezier(.22,.7,.2,1);
+}
+.svc article:hover .svc-photo img{transform:scale(1.03)}
+.svc-body{padding:32px 30px 0}
 .svc article:first-child{border-left:1px solid var(--line)}
 .svc article:hover{background:var(--paper2)}
 .svc .tag{
@@ -662,6 +672,7 @@ img{max-width:100%;display:block}
   .dsteps{grid-template-columns:1fr}
   .assure article,.assure article:nth-child(3){border-left:1px solid var(--line)}
   .svc article,.svc article:nth-child(3){border-left:1px solid var(--line)}
+  .svc-body{padding:26px 22px 0}
   .plan--rec{padding-top:52px}
   .works{gap:44px}
   .pf-list div{grid-template-columns:1fr;gap:4px;padding:12px 0}
@@ -771,28 +782,43 @@ img{max-width:100%;display:block}
     <p class="lead">制作・SEO・AI検索対策を別々に考えるのではなく、問い合わせにつながる一つの導線として設計します。すべて同じ担当者が対応するため、途中で目的や意図が抜け落ちません。</p>
     <div class="svc stagger">
       <article>
-        <span class="tag">01 — WEB</span>
+        <div class="svc-photo">
+          <img src="./svc/web.webp" width="900" height="600" loading="lazy" decoding="async" alt="ホームページ制作のイメージ">
+        </div>
+        <div class="svc-body">
+          <span class="tag">01 — WEB</span>
         <h3>ホームページ制作</h3>
         <p>WordPressを中心に、更新しやすく問い合わせにつながる構成で設計します。スマートフォン表示と表示速度は制作時点で作り込みます。</p>
         <a href="#contact" class="more">制作前にサイトの課題を相談する
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
+        </div>
       </article>
       <article>
-        <span class="tag">02 — SEO</span>
+        <div class="svc-photo">
+          <img src="./svc/seo.webp" width="900" height="600" loading="lazy" decoding="async" alt="SEOコンサルティングのイメージ">
+        </div>
+        <div class="svc-body">
+          <span class="tag">02 — SEO</span>
         <h3>SEOコンサルティング</h3>
         <p>キーワード設計から記事構成、既存記事のリライトまで。順位ではなく、問い合わせにつながる検索流入を増やすことを目的に進めます。</p>
         <a href="#contact" class="more">検索流入の改善点を診断する
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
+        </div>
       </article>
       <article>
-        <span class="tag">03 — AIO</span>
+        <div class="svc-photo">
+          <img src="./svc/aio.webp" width="900" height="600" loading="lazy" decoding="async" alt="AI検索対策のイメージ">
+        </div>
+        <div class="svc-body">
+          <span class="tag">03 — AIO</span>
         <h3>AI検索対策（AIO・LLMO）</h3>
         <p>ChatGPTなどのAIが情報源として引用しやすい構造にサイトを整えます。検索エンジンだけを見た対策では届かない層に接点をつくります。</p>
         <a href="#contact" class="more">AI検索への対応状況を診断する
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
+        </div>
       </article>
     </div>
     <div class="cmp reveal">
@@ -1217,7 +1243,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-06k</span>
+      <span>BUILD 2026-08-06l</span>
     </div>
   </div>
 </footer>
