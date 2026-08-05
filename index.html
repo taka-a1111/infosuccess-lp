@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-05h -->
+<!-- BUILD_TAG: 2026-08-05i -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -159,16 +159,24 @@ img{max-width:100%;display:block}
   min-height:100vh;display:flex;align-items:center;
   padding:150px 0 100px;position:relative;
 }
-.hero .wrap{display:grid;grid-template-columns:1fr 330px;gap:70px;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:1fr 270px;gap:44px;align-items:center}
 .hero-rule{width:56px;height:1px;background:var(--accent);margin-bottom:32px}
 .hero h1{
   font-family:var(--serif);
-  font-size:clamp(30px,5.6vw,66px);
+  font-size:clamp(28px,3.8vw,50px);
   font-weight:600;
-  line-height:1.55;
+  line-height:1.6;
   letter-spacing:.05em;
   margin-bottom:36px;
   text-indent:-.06em;
+}
+.hero h1 .ln{display:block}
+@media (min-width:769px){
+  .hero h1 .ln{white-space:nowrap}
+}
+@media (max-width:1180px){
+  .hero .wrap{grid-template-columns:1fr;gap:52px}
+  .hero-fig{max-width:320px}
 }
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero p{font-size:16px;color:var(--sub);max-width:520px;margin-bottom:46px;line-height:2.15}
@@ -594,7 +602,7 @@ img{max-width:100%;display:block}
   <div class="wrap">
     <div>
       <div class="hero-rule anim a1"></div>
-      <h1 class="anim a2">ホームページを作る人ではなく、<br>検索・<em>AI</em>・紹介から<br>問い合わせを生む人です。</h1>
+      <h1 class="anim a2"><span class="ln">ホームページを作る人ではなく、</span><span class="ln">検索・<em>AI</em>・紹介から</span><span class="ln">問い合わせを生む人です。</span></h1>
       <p class="anim a3">SEO歴16年のWebディレクターが、事業の整理からサイト設計・制作、記事、AI検索対策まで一貫して担当します。窓口は変わらず、公開後の改善まで伴走します。</p>
       <div class="hero-actions anim a4">
         <a href="#contact" class="btn btn--solid">無料でサイトの改善点を知る
@@ -1010,7 +1018,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-05h</span>
+      <span>BUILD 2026-08-05i</span>
     </div>
   </div>
 </footer>
