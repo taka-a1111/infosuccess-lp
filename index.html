@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-06q -->
+<!-- BUILD_TAG: 2026-08-06r -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -402,10 +402,32 @@ img{max-width:100%;display:block}
 .reasons p{font-size:14.5px;color:var(--sub);line-height:2}
 
 /* ---------- flow ---------- */
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:56px}
-.flow article{border:1px solid var(--line);padding:34px 24px 30px;background:#fff}
-.flow .fn{font-family:var(--num);font-size:11px;letter-spacing:.18em;color:var(--accent);margin-bottom:20px;display:block}
-.flow h3{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:14px;letter-spacing:.05em}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:38px;margin-top:56px}
+.flow article{
+  border:1px solid var(--line);padding:30px 26px 30px;background:var(--paper);
+  position:relative;transition:border-color .4s ease,transform .5s cubic-bezier(.22,.7,.2,1);
+}
+.flow article::before{
+  content:"";position:absolute;left:-1px;top:-1px;width:44px;height:2px;background:var(--accent);
+}
+.flow article:hover{border-color:var(--line2);transform:translateY(-4px)}
+.flow article:last-child{background:var(--accent-soft);border-color:#CBD8E3}
+.flow article:not(:last-child)::after{
+  content:"";position:absolute;right:-27px;top:50%;margin-top:-5px;
+  width:9px;height:9px;border-right:1.5px solid var(--accent);border-top:1.5px solid var(--accent);
+  transform:rotate(45deg);
+}
+.flow .fn{
+  display:flex;align-items:baseline;gap:11px;margin-bottom:18px;
+  padding-bottom:16px;border-bottom:1px solid var(--line);
+  font-family:var(--num);font-size:10px;letter-spacing:.2em;color:#A8A49B;
+}
+.flow article:last-child .fn{border-bottom-color:#CBD8E3}
+.flow .fn em{
+  font-style:normal;font-family:var(--num);font-size:32px;font-weight:300;
+  color:var(--accent);line-height:1;letter-spacing:-.02em;
+}
+.flow h3{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:14px;letter-spacing:.05em;line-height:1.6}
 .flow p{font-size:14px;color:var(--sub);line-height:2}
 .flow-note{margin-top:32px;font-size:13.5px;color:var(--sub);line-height:2.05;border-left:1px solid var(--accent);padding-left:22px}
 
@@ -702,6 +724,11 @@ img{max-width:100%;display:block}
   .checks li{font-size:15px;padding:17px 4px;gap:14px}
   .checks-note{font-size:14.5px;padding-left:18px}
   .svc,.works,.flow,.plans,.assure{grid-template-columns:1fr}
+  .flow{gap:44px}
+  .flow article:not(:last-child)::after{
+    right:auto;left:50%;top:auto;bottom:-30px;margin-top:0;margin-left:-5px;
+    transform:rotate(135deg);
+  }
   .trust-grid{grid-template-columns:repeat(2,1fr)}
   .trust-grid div{padding:22px 16px}
   .inline-cta{flex-direction:column;align-items:stretch;padding:28px 24px;text-align:center}
@@ -1070,22 +1097,22 @@ img{max-width:100%;display:block}
     <p class="lead">全体で4つの工程に分けて進めます。それぞれの工程で何をするのかを、着手前にお伝えします。</p>
     <div class="flow stagger">
       <article>
-        <span class="fn">STEP 01</span>
+        <span class="fn"><em>01</em>STEP</span>
         <h3>現状整理・戦略設計</h3>
         <p>事業の強み、ターゲット、競合、現在の集客経路を整理し、サイトに持たせる役割を決めます。</p>
       </article>
       <article>
-        <span class="fn">STEP 02</span>
+        <span class="fn"><em>02</em>STEP</span>
         <h3>構成・原稿設計</h3>
         <p>検索ニーズと問い合わせまでの導線をもとに、ページ構成と各ページの内容を設計します。</p>
       </article>
       <article>
-        <span class="fn">STEP 03</span>
+        <span class="fn"><em>03</em>STEP</span>
         <h3>デザイン・実装</h3>
         <p>確定した構成をもとに制作を進め、スマートフォン表示や表示速度まで調整します。</p>
       </article>
       <article>
-        <span class="fn">STEP 04</span>
+        <span class="fn"><em>04</em>STEP</span>
         <h3>公開・改善</h3>
         <p>動作確認後に公開し、更新方法とアクセス解析の見方をご説明します。公開後の改善も支援します。</p>
       </article>
@@ -1282,7 +1309,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-06q</span>
+      <span>BUILD 2026-08-06r</span>
     </div>
   </div>
 </footer>
