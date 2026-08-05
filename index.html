@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-06f -->
+<!-- BUILD_TAG: 2026-08-06g -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -71,7 +71,18 @@ img{max-width:100%;display:block}
 .narrow{width:min(880px,88vw);margin:0 auto}
 .section{padding:var(--pad) 0}
 .section--tint{background:var(--paper2)}
-.section--dark{background:var(--ink);color:#F2F1EE}
+.section--soft{background:var(--accent-soft)}
+.section--soft .eyebrow{color:#5C7590}
+.section--soft .eyebrow::after{background:#B9CBDA}
+.section--soft .assure article{border-color:#CBD8E3;background:rgba(253,252,250,.55)}
+.section--soft .assure{border-top-color:#CBD8E3}
+.section--soft .lead{color:#4A6076}
+.section--dark{background:var(--ink);color:#F2F1EE;position:relative}
+.section--dark::before,.section--dark::after{
+  content:"";position:absolute;left:0;right:0;height:1px;background:var(--accent);opacity:.5;
+}
+.section--dark::before{top:0}
+.section--dark::after{bottom:0}
 
 .eyebrow{
   font-family:var(--num);
@@ -795,7 +806,7 @@ img{max-width:100%;display:block}
 </section>
 
 <!-- PROBLEM -->
-<section class="section section--tint" id="problem">
+<section class="section" id="problem">
   <div class="wrap reveal">
     <p class="eyebrow">ISSUE</p>
     <h2 class="h2">「作ったのに、何も起きなかった」<br>という相談が、いちばん多い。</h2>
@@ -814,7 +825,7 @@ img{max-width:100%;display:block}
 </section>
 
 <!-- SERVICE -->
-<section class="section" id="service">
+<section class="section section--tint" id="service">
   <div class="wrap reveal">
     <p class="eyebrow">SERVICE</p>
     <h2 class="h2">できること</h2>
@@ -1091,7 +1102,7 @@ img{max-width:100%;display:block}
 </section>
 
 <!-- ASSURANCE -->
-<section class="section" id="assure">
+<section class="section section--soft" id="assure">
   <div class="wrap reveal">
     <p class="eyebrow">COMMITMENT</p>
     <h2 class="h2">個人への依頼だからこそ、<br>進め方を曖昧にしません。</h2>
@@ -1277,7 +1288,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-06f</span>
+      <span>BUILD 2026-08-06g</span>
     </div>
   </div>
 </footer>
