@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-05n -->
+<!-- BUILD_TAG: 2026-08-05o -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -334,6 +334,47 @@ img{max-width:100%;display:block}
 .works .cat{font-family:var(--num);font-size:10px;letter-spacing:.18em;color:var(--sub)}
 .works p{font-size:13.5px;color:var(--sub);line-height:1.95}
 .works .host{font-family:var(--num);font-size:11px;color:#A8A49B;letter-spacing:.04em;margin-top:9px}
+
+/* ---------- figures (shared) ---------- */
+.fig{margin-top:52px}
+.fig svg{width:100%;height:auto;display:block;overflow:visible}
+.fig-cap{
+  margin-top:18px;font-size:12.5px;color:var(--sub);line-height:1.95;
+  padding-left:20px;position:relative;
+}
+.fig-cap::before{content:"";position:absolute;left:0;top:13px;width:8px;height:1px;background:var(--accent)}
+.fg-line{fill:none;stroke:var(--line2);stroke-width:1}
+.fg-line-a{fill:none;stroke:var(--accent);stroke-width:1.4}
+.fg-box{fill:none;stroke:var(--line2);stroke-width:1}
+.fg-box-a{fill:none;stroke:var(--accent);stroke-width:1.2}
+.fg-fill{fill:var(--paper2)}
+.fg-fill-a{fill:var(--accent-soft)}
+.fg-dot{fill:var(--accent)}
+.fg-dot-m{fill:var(--line2)}
+.fg-t{font-family:var(--sans);font-size:12px;fill:var(--sub);letter-spacing:.05em}
+.fg-t.b{fill:var(--text);font-weight:500}
+.fg-t.a{fill:var(--accent);font-weight:500}
+.fg-t.s{font-size:10.5px;fill:#A8A49B;letter-spacing:.12em}
+.fg-t.n{font-family:var(--num);font-size:22px;fill:var(--text);font-weight:400;letter-spacing:-.01em}
+.fg-t.n.a{fill:var(--accent)}
+.fg-t.u{font-family:var(--num);font-size:10px;fill:#A8A49B;letter-spacing:.14em}
+.fg-dash{stroke-dasharray:3 3}
+.section--dark .fg-line{stroke:var(--line-dark)}
+.section--dark .fg-line-a{stroke:#8FB4D4}
+.section--dark .fg-t{fill:#A8B0BB}
+.section--dark .fg-t.b{fill:#F2F1EE}
+.section--dark .fg-t.s,.section--dark .fg-t.u{fill:#6E7885}
+.section--dark .fg-t.n{fill:#fff}
+.section--dark .fg-t.n.a{fill:#8FB4D4}
+.section--dark .fg-dot{fill:#8FB4D4}
+.section--dark .fg-dot-m{fill:#4A535F}
+.section--dark .fig-cap{color:#8D96A3}
+.section--dark .fig-cap::before{background:#6E7885}
+@media (prefers-reduced-motion:no-preference){
+  .visible .fg-draw{stroke-dasharray:420;stroke-dashoffset:420;animation:fgd 1.5s ease forwards}
+  .visible .fg-draw.d2{animation-delay:.2s}
+}
+@keyframes fgd{to{stroke-dashoffset:0}}
 
 /* ---------- media / writing ---------- */
 .media{margin-top:70px;padding-top:46px;border-top:1px solid var(--line)}
@@ -783,6 +824,43 @@ img{max-width:100%;display:block}
         </a>
       </article>
     </div>
+    <div class="fig reveal">
+      <svg viewBox="0 0 900 300" role="img" aria-label="Google検索では10本のリンクが並ぶのに対し、AI検索では引用された数サイトの情報が1つの答えに統合されることを比較した図">
+        <text class="fg-t s" x="0" y="14">GOOGLE検索</text>
+        <line class="fg-line" x1="0" y1="26" x2="900" y2="26"/>
+        <text class="fg-t" x="0" y="70">キーワード</text>
+        <line class="fg-line fg-draw" x1="86" y1="66" x2="146" y2="66"/>
+        <rect class="fg-fill" x="156" y="42" width="230" height="14"/>
+        <rect class="fg-fill" x="156" y="62" width="230" height="14"/>
+        <rect class="fg-fill" x="156" y="82" width="230" height="14"/>
+        <rect class="fg-fill" x="156" y="102" width="165" height="14"/>
+        <text class="fg-t" x="416" y="66">検索結果に10本のリンクが並ぶ</text>
+        <text class="fg-t" x="416" y="90">どれを読むかはユーザーが選ぶ</text>
+        <line class="fg-line fg-dash" x1="0" y1="152" x2="900" y2="152"/>
+        <text class="fg-t s" x="0" y="188">AI検索</text>
+        <line class="fg-line" x1="0" y1="200" x2="900" y2="200"/>
+        <text class="fg-t" x="0" y="242">質問</text>
+        <line class="fg-line-a fg-draw d2" x1="46" y1="238" x2="120" y2="238"/>
+        <circle class="fg-dot" cx="132" cy="238" r="6"/>
+        <path class="fg-line fg-draw d2" d="M144 238 C170 238 168 216 194 216"/>
+        <path class="fg-line fg-draw d2" d="M144 238 L194 238"/>
+        <path class="fg-line fg-draw d2" d="M144 238 C170 238 168 260 194 260"/>
+        <rect class="fg-fill" x="200" y="209" width="132" height="14"/>
+        <rect class="fg-fill" x="200" y="231" width="132" height="14"/>
+        <rect class="fg-fill" x="200" y="253" width="132" height="14"/>
+        <text class="fg-t s" x="200" y="288">引用された数サイトだけが読まれる</text>
+        <path class="fg-line-a fg-draw d2" d="M338 216 C368 216 366 238 396 238"/>
+        <path class="fg-line-a fg-draw d2" d="M338 238 L396 238"/>
+        <path class="fg-line-a fg-draw d2" d="M338 260 C368 260 366 238 396 238"/>
+        <rect class="fg-box-a" x="406" y="206" width="182" height="64"/>
+        <rect class="fg-fill-a" x="406" y="206" width="182" height="64"/>
+        <text class="fg-t b" x="497" y="243" text-anchor="middle">1つの答えに統合</text>
+        <rect class="fg-box-a" x="646" y="200" width="254" height="76"/>
+        <text class="fg-t a" x="670" y="230">引用されなければ、</text>
+        <text class="fg-t a" x="670" y="256">存在しないのと同じになる</text>
+      </svg>
+      <p class="fig-cap">従来の検索では10本のリンクが並び、ユーザーがどれを読むかを選んでいました。AI検索では複数のサイトの情報が1つの答えにまとめられ、引用された数サイトだけが読まれます。引用される側に入っておくための設計が、AIO・LLMO対策です。</p>
+    </div>
   </div>
 </section>
 
@@ -796,6 +874,23 @@ img{max-width:100%;display:block}
       <div><p class="num"><span class="cnt" data-to="120">0</span><small>本</small></p><p class="cap">納品記事数</p><p class="from"><em></em>18ヶ月で納品</p></div>
       <div><p class="num"><span class="cnt" data-to="15">0</span><small>%</small></p><p class="cap">主要KW1位獲得率</p></div>
       <div><p class="num"><span class="cnt" data-to="16">0</span><small>年</small></p><p class="cap">SEO実務歴</p></div>
+    </div>
+    <div class="fig reveal">
+      <svg viewBox="0 0 900 250" role="img" aria-label="支援開始時の月間3万セッションから18ヶ月後に20万セッションへ増加したことを示す図">
+        <text class="fg-t u" x="900" y="16" text-anchor="end">MONTHLY SESSIONS</text>
+        <line class="fg-line fg-dash" x1="120" y1="72" x2="860" y2="72"/>
+        <text class="fg-t u" x="60" y="76">200,000</text>
+        <line class="fg-line" x1="120" y1="200" x2="860" y2="200"/>
+        <text class="fg-t u" x="60" y="204">30,000</text>
+        <line class="fg-line-a fg-draw" x1="180" y1="200" x2="740" y2="72"/>
+        <circle class="fg-dot-m" cx="180" cy="200" r="6"/>
+        <circle class="fg-dot" cx="740" cy="72" r="8"/>
+        <text class="fg-t n a" x="740" y="46" text-anchor="middle">20万</text>
+        <text class="fg-t n" x="180" y="166" text-anchor="middle">3万</text>
+        <text class="fg-t s" x="180" y="186" text-anchor="middle">支援開始</text>
+        <text class="fg-t" x="180" y="230" text-anchor="middle">2023年8月</text>
+        <text class="fg-t b" x="740" y="230" text-anchor="middle">18ヶ月後</text>
+      </svg>
     </div>
     <p class="note">キーワードの選定、記事構成、外部ライターの進行管理、既存記事の改善までを担当しました。記事数を増やすのではなく、検索意図とサイト全体の役割を整理したうえで、優先順位をつけて改善しています。<br><br>2023年8月から18ヶ月間、企業オウンドメディア1媒体のSEOディレクションを担当した際の実績です。支援開始時点の月間セッション数は3万でした。記載の数値は同期間・同媒体の全データにもとづくもので、成果を保証するものではありません。</p>
   </div>
@@ -972,6 +1067,32 @@ img{max-width:100%;display:block}
     <p class="eyebrow">FLOW</p>
     <h2 class="h2">制作の流れ</h2>
     <p class="lead">工程ごとに内容を確認していただき、承認を得てから次へ進みます。後戻りが起きにくい進め方です。</p>
+    <div class="fig reveal">
+      <svg viewBox="0 0 900 190" role="img" aria-label="現状整理、構成設計、デザイン実装、公開改善の4工程と、その間に承認を挟むことを示す図">
+        <line class="fg-line" x1="0" y1="96" x2="900" y2="96"/>
+        <rect class="fg-box" x="0" y="60" width="186" height="72"/>
+        <text class="fg-t s" x="16" y="84">STEP 01</text>
+        <text class="fg-t b" x="16" y="112">現状整理・戦略設計</text>
+        <rect class="fg-box" x="238" y="60" width="186" height="72"/>
+        <text class="fg-t s" x="254" y="84">STEP 02</text>
+        <text class="fg-t b" x="254" y="112">構成・原稿設計</text>
+        <rect class="fg-box" x="476" y="60" width="186" height="72"/>
+        <text class="fg-t s" x="492" y="84">STEP 03</text>
+        <text class="fg-t b" x="492" y="112">デザイン・実装</text>
+        <rect class="fg-box-a" x="714" y="60" width="186" height="72"/>
+        <text class="fg-t s" x="730" y="84">STEP 04</text>
+        <text class="fg-t b" x="730" y="112">公開・改善</text>
+        <circle class="fg-dot" cx="212" cy="96" r="5"/>
+        <circle class="fg-dot" cx="450" cy="96" r="5"/>
+        <circle class="fg-dot" cx="688" cy="96" r="5"/>
+        <text class="fg-t a" x="212" y="40" text-anchor="middle">承認</text>
+        <text class="fg-t a" x="450" y="40" text-anchor="middle">承認</text>
+        <text class="fg-t a" x="688" y="40" text-anchor="middle">承認</text>
+        <line class="fg-line-a" x1="212" y1="48" x2="212" y2="88"/>
+        <line class="fg-line-a" x1="450" y1="48" x2="450" y2="88"/>
+        <line class="fg-line-a" x1="688" y1="48" x2="688" y2="88"/>
+      </svg>
+    </div>
     <div class="flow stagger">
       <article>
         <span class="fn">STEP 01</span>
@@ -1188,7 +1309,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-05n</span>
+      <span>BUILD 2026-08-05o</span>
     </div>
   </div>
 </footer>
