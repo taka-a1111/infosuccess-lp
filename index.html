@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-08-07e -->
+<!-- BUILD_TAG: 2026-08-07h -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
@@ -347,25 +347,39 @@ img{max-width:100%;display:block}
 .section--dark .fig-cap::before{background:#6E7885}
 
 /* ---------- search comparison ---------- */
-.cmp{margin-top:56px;border-top:1px solid var(--line)}
-.cmp-head{
-  display:grid;grid-template-columns:150px 1fr 1fr;gap:0;
-  border-bottom:1px solid var(--line);
-}
+.cmp{margin-top:56px;border:1px solid var(--line);background:var(--paper)}
+.cmp-head{display:grid;grid-template-columns:270px 1fr 1fr;border-bottom:1px solid var(--line)}
 .cmp-head span{
-  padding:18px 20px;font-family:var(--num);font-size:11px;letter-spacing:.15em;color:var(--sub);
+  padding:22px 20px;font-family:var(--serif);font-size:15px;letter-spacing:.12em;
+  color:var(--text);text-align:center;
 }
-.cmp-head span.is-ai{background:var(--accent-soft);color:var(--accent-deep);font-weight:500}
-.cmp-body{display:grid;grid-template-columns:150px 1fr 1fr}
+.cmp-head span.is-ai{background:var(--accent-soft);color:var(--accent-deep);font-weight:600}
+.cmp-body{display:grid;grid-template-columns:270px 1fr 1fr}
 .cmp-body>div{
-  padding:20px;border-bottom:1px solid var(--line);
-  font-size:15px;line-height:1.85;color:var(--text);
+  padding:24px 20px;border-bottom:1px solid var(--line);
+  font-size:15.5px;line-height:1.8;color:var(--text);text-align:center;
+  display:flex;align-items:center;justify-content:center;
 }
-.cmp-body>div.k{font-size:13.5px;color:var(--sub);letter-spacing:.04em}
+.cmp-body>div:nth-child(3n+1){
+  justify-content:flex-start;gap:16px;text-align:left;
+  font-size:14.5px;color:var(--sub);letter-spacing:.04em;padding-left:26px;
+}
 .cmp-body>div.ai{background:var(--accent-soft);color:var(--accent-deep);font-weight:500}
+.cmp-body>div:nth-last-child(-n+3){border-bottom:0}
+.ci{
+  flex:none;width:38px;height:38px;border-radius:50%;background:var(--paper3);
+  display:flex;align-items:center;justify-content:center;
+}
+.ci svg{width:19px;height:19px;stroke:var(--accent);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
 .cmp-note{
-  margin-top:34px;border-left:1px solid var(--accent);padding:6px 0 6px 24px;
-  font-size:16px;color:var(--accent-deep);font-weight:500;line-height:1.85;
+  margin-top:26px;border:1px solid #CBD8E3;background:var(--accent-soft);
+  padding:24px 28px;display:flex;align-items:center;gap:22px;
+  font-size:16px;color:var(--accent-deep);font-weight:500;line-height:1.8;
+}
+.cmp-note .ni{
+  flex:none;width:42px;height:42px;border-radius:50%;background:var(--accent);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:20px;
 }
 
 /* ---------- growth ---------- */
@@ -406,14 +420,25 @@ img{max-width:100%;display:block}
 .media-note::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1px;background:var(--accent)}
 
 /* ---------- reasons ---------- */
-.reasons{margin-top:52px;border-top:1px solid var(--line)}
+.reasons{margin-top:52px;border-top:1px solid var(--line2)}
 .reasons li{
-  display:grid;grid-template-columns:80px 300px 1fr;gap:30px;align-items:start;
-  padding:36px 0;border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:88px 320px 1fr;gap:28px;align-items:center;
+  padding:32px 8px;border-bottom:1px solid var(--line);
+  transition:background .35s ease;
 }
-.reasons .rn{font-family:var(--num);font-size:12px;letter-spacing:.14em;color:var(--accent);padding-top:7px}
-.reasons h3{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.04em;line-height:1.65}
-.reasons p{font-size:14.5px;color:var(--sub);line-height:2}
+.reasons li:hover{background:var(--paper)}
+.reasons .rn{
+  font-family:var(--serif);font-size:30px;font-weight:600;color:var(--accent);
+  letter-spacing:.02em;line-height:1;position:relative;
+}
+.reasons .rn::after{
+  content:"";position:absolute;right:-14px;top:-6px;bottom:-6px;width:1px;background:var(--line2);
+}
+.reasons h3{
+  font-family:var(--serif);font-size:19.5px;font-weight:600;
+  letter-spacing:.05em;line-height:1.65;color:var(--text);
+}
+.reasons p{font-size:14.5px;color:var(--sub);line-height:1.95}
 
 /* ---------- flow ---------- */
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:38px;margin-top:74px}
@@ -764,8 +789,11 @@ img{max-width:100%;display:block}
   .assure article:nth-child(3){border-left:1px solid var(--line)}
   .svc article:nth-child(3){border-left:1px solid var(--line)}
   .pf-list{grid-template-columns:1fr;column-gap:0}
-    .reasons li{grid-template-columns:60px 1fr;gap:20px}
-  .reasons p{grid-column:2}
+    .reasons li{grid-template-columns:64px 1fr;gap:8px 18px;padding:26px 4px}
+  .reasons .rn{font-size:26px}
+  .reasons .rn::after{right:-9px}
+  .reasons h3{font-size:17.5px}
+  .reasons p{grid-column:2;font-size:14px}
   .metrics div{padding:22px 0 0}
   .metrics div:nth-child(odd){border-left:0}
   .metrics div:nth-child(-n+2){padding-top:0}
@@ -797,11 +825,14 @@ img{max-width:100%;display:block}
   .scroll-cue{display:none}
   .works{gap:36px}
   .fig-cap{font-size:13px;margin-top:18px}
-  .cmp-head{grid-template-columns:64px 1fr 1fr}
-  .cmp-head span{padding:12px 8px;font-size:9.5px;letter-spacing:.08em}
-  .cmp-body{grid-template-columns:64px 1fr 1fr}
-  .cmp-body>div{padding:13px 8px;font-size:12.5px;line-height:1.65}
-  .cmp-body>div.k{font-size:11px;letter-spacing:0;padding:13px 6px}
+  .cmp-head{grid-template-columns:86px 1fr 1fr}
+  .cmp-head span{padding:12px 6px;font-size:11px;letter-spacing:.04em}
+  .cmp-body{grid-template-columns:86px 1fr 1fr}
+  .cmp-body>div{padding:14px 8px;font-size:12.5px;line-height:1.6}
+  .cmp-body>div:nth-child(3n+1){font-size:11.5px;padding-left:10px;gap:0}
+  .ci{display:none}
+  .cmp-note{padding:18px 20px;gap:14px;font-size:14.5px}
+  .cmp-note .ni{width:34px;height:34px;font-size:17px}
   .cmp-note{font-size:14.5px;padding-left:16px}
   .growth-item{grid-template-columns:1fr auto;gap:6px 16px;padding:18px 0}
   .gl{grid-column:1}
@@ -882,9 +913,8 @@ img{max-width:100%;display:block}
   .metrics{grid-template-columns:1fr}
   .metrics div{border-left:0;padding:20px 0 0}
   .metrics div:first-child{padding-top:0}
-  .reasons li{grid-template-columns:1fr;gap:10px}
-  .reasons .rn{padding-top:0}
-  .reasons p{grid-column:1}
+  .reasons li{grid-template-columns:56px 1fr;gap:8px 14px}
+  .reasons p{grid-column:2}
 }
 </style>
 </head>
@@ -1030,21 +1060,21 @@ img{max-width:100%;display:block}
         <span class="is-ai">AI検索</span>
       </div>
       <div class="cmp-body">
-        <div class="k">返ってくるもの</div>
+        <div class="k"><span class="ci"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7"/><path d="M15.6 15.6L21 21"/></svg></span>返ってくるもの</div>
         <div>10本のリンク</div>
         <div class="ai">1つにまとまった答え</div>
-        <div class="k">選ぶのは誰か</div>
+        <div class="k"><span class="ci"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20.5c0-3.6 3.4-6 7.5-6s7.5 2.4 7.5 6"/></svg></span>選ぶのは誰か</div>
         <div>ユーザーが選んで読む</div>
         <div class="ai">AIが引用先を選ぶ</div>
-        <div class="k">評価される軸</div>
+        <div class="k"><span class="ci"><svg viewBox="0 0 24 24"><path d="M3 20.5h18"/><rect x="5" y="12" width="3.4" height="6.5"/><rect x="10.3" y="8" width="3.4" height="10.5"/><rect x="15.6" y="14" width="3.4" height="4.5"/></svg></span>評価される軸</div>
         <div>検索順位に入っているか</div>
         <div class="ai">引用されるか</div>
-        <div class="k">必要な対策</div>
+        <div class="k"><span class="ci"><svg viewBox="0 0 24 24"><path d="M12 2.5l8 3.2v6c0 5-3.4 8.7-8 9.8-4.6-1.1-8-4.8-8-9.8v-6z"/><path d="M8.8 12l2.2 2.2 4.2-4.6"/></svg></span>必要な対策</div>
         <div>SEO</div>
         <div class="ai">AIO・LLMO</div>
       </div>
-      <p class="cmp-note">AI検索では、引用されなければ存在しないのと同じになります。</p>
     </div>
+    <div class="cmp-note"><span class="ni" aria-hidden="true">!</span><p>AI検索では、引用されなければ存在しないのと同じになります。</p></div>
     <div class="growth reveal">
       <div class="growth-item">
         <p class="gl">支援開始<small>2023年8月</small></p>
@@ -1481,7 +1511,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="ft-bottom">
       <span>&copy; INFOSUCCESS</span>
-      <span>BUILD 2026-08-07e</span>
+      <span>BUILD 2026-08-07h</span>
     </div>
   </div>
 </footer>
