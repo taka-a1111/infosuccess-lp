@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- BUILD_TAG: 2026-08-05a -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>インフォサクセス｜検索とAIから客を連れてくるホームページ制作・SEO・AIO対策</title>
+<meta name="description" content="名古屋のフリーランスがホームページ制作からSEO、AI検索対策までを窓口ひとつで対応。作って終わりにせず、問い合わせにつながる設計を行います。無料のサイト診断を受け付け中。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --paper2:#F7F6F3;
+  --ink:#14181F;
+  --accent:#1C3D5A;
+  --text:#1A1A1A;
+  --sub:#5A5A5A;
+  --line:#E3E1DC;
+  --line-dark:#2C333D;
+  --serif:"Yu Mincho",YuMincho,"Hiragino Mincho ProN","Shippori Mincho","Noto Serif JP","MS PMincho",serif;
+  --sans:"Yu Gothic",YuGothic,"Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,"MS PGothic",sans-serif;
+  --num:"Inter","Yu Gothic",sans-serif;
+  --pad:120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  background:var(--paper);
+  overflow-x:hidden;
+  line-height:1.9;
+  font-size:16px;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+li{list-style:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{width:min(1120px,88vw);margin:0 auto}
+.narrow{width:min(880px,88vw);margin:0 auto}
+.section{padding:var(--pad) 0}
+.section--tint{background:var(--paper2)}
+.section--dark{background:var(--ink);color:#F2F1EE}
+
+.eyebrow{
+  font-family:var(--num);
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--sub);
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:26px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line);max-width:120px}
+.section--dark .eyebrow{color:#8D96A3}
+.section--dark .eyebrow::after{background:var(--line-dark)}
+
+.h2{
+  font-family:var(--serif);
+  font-size:clamp(24px,3.4vw,38px);
+  font-weight:600;
+  line-height:1.6;
+  letter-spacing:.03em;
+  margin-bottom:20px;
+}
+.lead{color:var(--sub);font-size:15px;max-width:640px}
+.section--dark .lead{color:#A8B0BB}
+
+/* ---------- header ---------- */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:80;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px min(6vw,48px);
+  transition:background .4s ease,padding .4s ease,border-color .4s ease;
+  border-bottom:1px solid transparent;
+}
+.site-header.scrolled{
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  padding:14px min(6vw,48px);
+  border-bottom-color:var(--line);
+}
+.logo{font-family:var(--serif);font-size:19px;letter-spacing:.14em;font-weight:600}
+.logo span{
+  display:block;font-family:var(--num);font-size:9px;letter-spacing:.24em;
+  color:var(--sub);margin-top:3px;font-weight:400;
+}
+.gnav{display:flex;align-items:center;gap:32px}
+.gnav a{font-size:13px;letter-spacing:.06em;color:var(--text);transition:opacity .3s}
+.gnav a:hover{opacity:.55}
+.nav-cta{
+  border:1px solid var(--accent);color:var(--accent);
+  padding:10px 22px;font-size:13px;letter-spacing:.06em;
+  transition:background .3s,color .3s;
+}
+.nav-cta:hover{background:var(--accent);color:#fff}
+.burger{display:none;width:30px;height:20px;position:relative;background:none;border:0;cursor:pointer}
+.burger span{position:absolute;left:0;width:100%;height:1px;background:var(--text);transition:transform .35s,opacity .35s}
+.burger span:nth-child(1){top:0}
+.burger span:nth-child(2){top:9px}
+.burger span:nth-child(3){top:18px}
+.burger.open span:nth-child(1){transform:translateY(9px) rotate(38deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-9px) rotate(-38deg)}
+
+/* ---------- side index (signature) ---------- */
+.side-index{
+  position:fixed;left:32px;top:50%;transform:translateY(-50%);
+  z-index:70;display:flex;flex-direction:column;gap:14px;
+}
+.side-index a{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--num);font-size:10px;letter-spacing:.16em;color:#B9B6AE;
+  transition:color .3s;
+}
+.side-index a i{display:block;width:14px;height:1px;background:#D6D3CB;transition:width .35s,background .35s}
+.side-index a.active{color:var(--ink)}
+.side-index a.active i{width:30px;background:var(--accent)}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:140px 0 90px;position:relative;
+}
+.hero-rule{width:56px;height:1px;background:var(--accent);margin-bottom:30px}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(29px,5.2vw,60px);
+  font-weight:600;
+  line-height:1.62;
+  letter-spacing:.035em;
+  margin-bottom:34px;
+}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:16px;color:var(--sub);max-width:520px;margin-bottom:44px;line-height:2.1}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:19px 38px;font-size:14px;letter-spacing:.08em;
+  border:1px solid var(--accent);transition:background .35s,color .35s,transform .35s;
+}
+.btn svg{width:15px;height:15px;flex:none}
+.btn--solid{background:var(--accent);color:#fff}
+.btn--solid:hover{background:var(--ink);border-color:var(--ink)}
+.btn--ghost{color:var(--accent)}
+.btn--ghost:hover{background:var(--accent);color:#fff}
+.btn--light{background:#fff;color:var(--ink);border-color:#fff}
+.btn--light:hover{background:transparent;color:#fff;border-color:#fff}
+.hero-meta{
+  position:absolute;right:0;bottom:90px;
+  font-family:var(--num);font-size:10px;letter-spacing:.2em;color:#B9B6AE;
+  writing-mode:vertical-rl;
+}
+
+/* ---------- problem ---------- */
+.problem-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  border-top:1px solid var(--line);margin-top:52px;
+}
+.problem-grid li{
+  border-bottom:1px solid var(--line);
+  padding:34px 30px 34px 0;
+  display:flex;gap:20px;align-items:flex-start;
+}
+.problem-grid li:nth-child(odd){border-right:1px solid var(--line);padding-right:40px}
+.problem-grid li:nth-child(even){padding-left:40px}
+.problem-grid b{
+  font-family:var(--num);font-size:11px;letter-spacing:.14em;
+  color:var(--accent);font-weight:400;padding-top:6px;flex:none;
+}
+.problem-grid p{font-size:15.5px;line-height:1.95}
+
+/* ---------- services ---------- */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line)}
+.svc article{
+  padding:44px 34px 40px;border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);transition:background .4s;
+}
+.svc article:first-child{border-left:1px solid var(--line)}
+.svc article:hover{background:var(--paper2)}
+.svc .tag{
+  font-family:var(--num);font-size:10px;letter-spacing:.2em;color:var(--sub);
+  display:block;margin-bottom:18px;
+}
+.svc h3{font-family:var(--serif);font-size:21px;font-weight:600;letter-spacing:.05em;margin-bottom:16px;line-height:1.6}
+.svc p{font-size:14.5px;color:var(--sub);line-height:2;margin-bottom:24px}
+.svc .more{font-size:13px;color:var(--accent);letter-spacing:.06em;display:inline-flex;align-items:center;gap:8px}
+.svc .more svg{width:13px;height:13px;transition:transform .3s}
+.svc article:hover .more svg{transform:translateX(5px)}
+
+/* ---------- metrics ---------- */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px}
+.metrics div{padding:0 20px;border-left:1px solid var(--line-dark)}
+.metrics div:first-child{border-left:0;padding-left:0}
+.metrics .num{
+  font-family:var(--num);font-size:clamp(34px,5vw,52px);font-weight:300;
+  letter-spacing:-.01em;line-height:1.2;color:#fff;
+}
+.metrics .num small{font-size:.42em;margin-left:4px;letter-spacing:.04em}
+.metrics .cap{font-size:13px;color:#A8B0BB;margin-top:10px;letter-spacing:.04em}
+.note{
+  margin-top:46px;padding-top:22px;border-top:1px solid var(--line-dark);
+  font-size:12px;color:#7E8794;line-height:1.9;
+}
+
+/* ---------- works ---------- */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:56px}
+.work-shot{border:1px solid var(--line);background:#fff;transition:transform .4s}
+.works article:hover .work-shot{transform:translateY(-6px)}
+.shot-bar{display:flex;gap:5px;padding:11px 13px;border-bottom:1px solid var(--line);background:var(--paper2)}
+.shot-bar i{width:7px;height:7px;border-radius:50%;background:#D6D3CB;display:block}
+.shot-body{padding:22px 20px 26px}
+.shot-body .l{height:9px;background:var(--paper2);margin-bottom:9px;border-radius:1px}
+.shot-body .l.a{width:62%;height:14px;background:#DEDCD6}
+.shot-body .l.b{width:88%}
+.shot-body .l.c{width:70%}
+.shot-body .l.d{width:34%;height:22px;background:#D3DAE2;margin-top:16px}
+.works h3{font-family:var(--serif);font-size:17px;font-weight:600;margin:24px 0 10px;letter-spacing:.05em}
+.works .cat{font-family:var(--num);font-size:10px;letter-spacing:.18em;color:var(--sub)}
+.works p{font-size:14px;color:var(--sub);line-height:1.95}
+
+/* ---------- reasons ---------- */
+.reasons{margin-top:52px;border-top:1px solid var(--line)}
+.reasons li{
+  display:grid;grid-template-columns:80px 300px 1fr;gap:30px;align-items:start;
+  padding:36px 0;border-bottom:1px solid var(--line);
+}
+.reasons .rn{font-family:var(--num);font-size:12px;letter-spacing:.14em;color:var(--accent);padding-top:7px}
+.reasons h3{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.04em;line-height:1.65}
+.reasons p{font-size:14.5px;color:var(--sub);line-height:2}
+
+/* ---------- flow ---------- */
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px}
+.flow article{border:1px solid var(--line);padding:38px 30px 34px;background:#fff}
+.flow .fn{font-family:var(--num);font-size:11px;letter-spacing:.18em;color:var(--accent);margin-bottom:20px;display:block}
+.flow h3{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:14px;letter-spacing:.05em}
+.flow p{font-size:14px;color:var(--sub);line-height:2}
+.flow-note{margin-top:32px;font-size:13.5px;color:var(--sub);line-height:2.05;border-left:1px solid var(--accent);padding-left:22px}
+
+/* ---------- price ---------- */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;align-items:end}
+.plan{border:1px solid var(--line);padding:40px 30px 34px;background:#fff;position:relative}
+.plan--rec{border:1px solid var(--accent);padding-top:56px;padding-bottom:44px}
+.plan .badge{
+  position:absolute;top:0;left:0;background:var(--accent);color:#fff;
+  font-size:11px;letter-spacing:.14em;padding:7px 16px;
+}
+.plan h3{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.08em;margin-bottom:16px}
+.plan .price{font-family:var(--num);font-size:34px;font-weight:300;letter-spacing:-.01em}
+.plan .price small{font-size:.4em;letter-spacing:.04em;margin-left:5px;color:var(--sub)}
+.plan .tax{font-size:11.5px;color:var(--sub);margin-top:6px}
+.plan ul{margin-top:26px;border-top:1px solid var(--line);padding-top:22px}
+.plan li{font-size:13.5px;color:var(--sub);padding:8px 0 8px 20px;position:relative;line-height:1.85}
+.plan li::before{content:"";position:absolute;left:0;top:15px;width:8px;height:1px;background:var(--accent)}
+.plan li.off{color:#A9A6A0}
+.plan li.off::before{background:#D6D3CB}
+.price-note{margin-top:34px;font-size:12.5px;color:var(--sub);line-height:2}
+
+/* ---------- faq ---------- */
+.faq{margin-top:52px;border-top:1px solid var(--line)}
+.faq li{padding:32px 0;border-bottom:1px solid var(--line)}
+.faq h3{
+  font-family:var(--serif);font-size:17.5px;font-weight:600;letter-spacing:.04em;
+  display:flex;gap:16px;margin-bottom:14px;line-height:1.7;
+}
+.faq h3::before{content:"Q";font-family:var(--num);font-size:12px;color:var(--accent);padding-top:6px}
+.faq p{font-size:14.5px;color:var(--sub);line-height:2.05;padding-left:28px}
+
+/* ---------- profile ---------- */
+.profile{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start;margin-top:52px}
+.pf-photo{border:1px solid var(--line);aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;background:var(--paper2)}
+.pf-photo span{font-family:var(--serif);font-size:52px;letter-spacing:.1em;color:#C6C3BB}
+.profile h3{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.06em;margin-bottom:8px}
+.profile .role{font-size:13px;color:var(--sub);letter-spacing:.08em;margin-bottom:26px}
+.profile p{font-size:15px;color:var(--sub);line-height:2.15;margin-bottom:18px}
+.pf-list{margin-top:28px;border-top:1px solid var(--line)}
+.pf-list div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.pf-list dt{color:var(--sub);letter-spacing:.06em}
+
+/* ---------- cta ---------- */
+.cta-inner{text-align:center}
+.cta-inner h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,36px);font-weight:600;line-height:1.65;letter-spacing:.04em;margin-bottom:22px}
+.cta-inner p{color:#A8B0BB;font-size:15px;line-height:2.05;margin-bottom:44px}
+.form{display:grid;gap:18px;max-width:560px;margin:0 auto;text-align:left}
+.form label{font-size:12px;letter-spacing:.1em;color:#A8B0BB;display:block;margin-bottom:9px}
+.form input,.form textarea,.form select{
+  width:100%;background:transparent;border:1px solid var(--line-dark);
+  padding:15px 16px;color:#F2F1EE;font-family:var(--sans);font-size:15px;
+}
+.form input:focus,.form textarea:focus,.form select:focus{border-color:#6E7C8C;outline:none}
+.form textarea{min-height:120px;resize:vertical}
+.form .submit{margin-top:10px;justify-content:center;width:100%;cursor:pointer;font-family:var(--sans)}
+
+/* ---------- footer ---------- */
+.site-footer{background:var(--ink);color:#8D96A3;padding:56px 0 40px;border-top:1px solid var(--line-dark)}
+.ft-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:26px;padding-bottom:30px;border-bottom:1px solid var(--line-dark)}
+.ft-logo{font-family:var(--serif);font-size:18px;letter-spacing:.14em;color:#F2F1EE}
+.ft-nav{display:flex;flex-wrap:wrap;gap:26px;font-size:13px}
+.ft-nav a:hover{color:#F2F1EE}
+.ft-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:26px;font-family:var(--num);font-size:10.5px;letter-spacing:.12em}
+
+/* ---------- sticky sp cta ---------- */
+.sp-cta{display:none}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  :root{--pad:84px}
+  .side-index{display:none}
+  .svc,.works,.flow,.plans,.metrics{grid-template-columns:repeat(2,1fr)}
+  .svc article:nth-child(3){border-left:1px solid var(--line)}
+  .profile{grid-template-columns:1fr;gap:34px}
+  .pf-photo{max-width:240px;aspect-ratio:1/1}
+  .reasons li{grid-template-columns:60px 1fr;gap:20px}
+  .reasons p{grid-column:2}
+  .metrics div{padding:22px 0 0}
+  .metrics div:nth-child(odd){border-left:0}
+  .metrics div:nth-child(-n+2){padding-top:0}
+}
+@media (max-width:768px){
+  :root{--pad:72px}
+  body{font-size:15px}
+  .gnav{
+    position:fixed;inset:0;background:var(--paper);
+    flex-direction:column;justify-content:center;gap:30px;
+    transform:translateX(100%);transition:transform .45s cubic-bezier(.4,0,.2,1);
+  }
+  .gnav.open{transform:none}
+  .gnav a{font-size:17px;font-family:var(--serif);letter-spacing:.1em}
+  .burger{display:block;z-index:90}
+  .site-header{padding:18px 22px}
+  .site-header.scrolled{padding:12px 22px}
+  .hero{padding:120px 0 110px;min-height:auto}
+  .hero-meta{display:none}
+  .hero p{margin-bottom:34px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center;padding:17px 24px}
+  .problem-grid{grid-template-columns:1fr}
+  .problem-grid li:nth-child(odd){border-right:0;padding-right:0}
+  .problem-grid li:nth-child(even){padding-left:0}
+  .svc,.works,.flow,.plans{grid-template-columns:1fr}
+  .svc article,.svc article:nth-child(3){border-left:1px solid var(--line)}
+  .plan--rec{padding-top:52px}
+  .works{gap:44px}
+  .pf-list div{grid-template-columns:1fr;gap:4px;padding:12px 0}
+  .sp-cta{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:75;
+    background:rgba(20,24,31,.96);padding:9px 12px;gap:10px;
+    border-top:1px solid var(--line-dark);
+  }
+  .sp-cta a{
+    flex:1;text-align:center;padding:14px 8px;font-size:13.5px;letter-spacing:.06em;
+  }
+  .sp-cta .p{background:#fff;color:var(--ink)}
+  .sp-cta .s{border:1px solid #4A535F;color:#F2F1EE}
+  .site-footer{padding-bottom:96px}
+  .ft-nav{gap:18px}
+}
+@media (max-width:480px){
+  .metrics{grid-template-columns:1fr}
+  .metrics div{border-left:0;padding:20px 0 0}
+  .metrics div:first-child{padding-top:0}
+  .reasons li{grid-template-columns:1fr;gap:10px}
+  .reasons .rn{padding-top:0}
+  .reasons p{grid-column:1}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <a href="#hero" class="logo">インフォサクセス<span>INFOSUCCESS</span></a>
+  <nav class="gnav" id="gnav">
+    <a href="#service">サービス</a>
+    <a href="#works">制作実績</a>
+    <a href="#flow">制作の流れ</a>
+    <a href="#price">料金</a>
+    <a href="#profile">運営者</a>
+    <a href="#contact" class="nav-cta">無料サイト診断</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<nav class="side-index" id="sideIndex" aria-label="セクション目次">
+  <a href="#hero"><i></i>TOP</a>
+  <a href="#problem"><i></i>ISSUE</a>
+  <a href="#service"><i></i>SERVICE</a>
+  <a href="#works"><i></i>WORKS</a>
+  <a href="#reason"><i></i>REASON</a>
+  <a href="#flow"><i></i>FLOW</a>
+  <a href="#price"><i></i>PRICE</a>
+  <a href="#faq"><i></i>FAQ</a>
+  <a href="#profile"><i></i>ABOUT</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-rule"></div>
+    <h1>ホームページを作る人ではなく、<br>検索と<em>AI</em>から客を<br>連れてくる人です。</h1>
+    <p>名古屋のフリーランス。SEO歴16年。サイトの設計・制作から記事、AI検索対策まで、窓口ひとつで担当が変わらずに進めます。</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn--solid">無料でサイトを診断する
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#service" class="btn btn--ghost">できることを見る</a>
+    </div>
+  </div>
+  <div class="hero-meta">WEB / SEO / AIO — NAGOYA</div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section section--tint" id="problem">
+  <div class="wrap reveal">
+    <p class="eyebrow">ISSUE</p>
+    <h2 class="h2">「作ったのに、何も起きなかった」<br>という相談が、いちばん多い。</h2>
+    <p class="lead">ホームページは、公開した瞬間がゴールではありません。見つけてもらう設計と、問い合わせまでの導線が抜けていると、どれだけ見た目が良くても数字は動きません。</p>
+    <ul class="problem-grid">
+      <li><b>01</b><p>公開して半年経つが、問い合わせが1件も入っていない</p></li>
+      <li><b>02</b><p>制作会社の見積が高く、何にいくらかかるのか分からない</p></li>
+      <li><b>03</b><p>更新の仕方が分からず、情報が古いまま止まっている</p></li>
+      <li><b>04</b><p>制作とSEOと広告で会社が別々になり、話が通らない</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section class="section" id="service">
+  <div class="wrap reveal">
+    <p class="eyebrow">SERVICE</p>
+    <h2 class="h2">できること</h2>
+    <p class="lead">3つはすべて同じ人間が担当します。制作とSEOの担当が分かれないので、途中で意図が抜け落ちません。</p>
+    <div class="svc">
+      <article>
+        <span class="tag">01 — WEB</span>
+        <h3>ホームページ制作</h3>
+        <p>WordPressを中心に、更新しやすく問い合わせにつながる構成で設計します。スマートフォン表示と表示速度は制作時点で作り込みます。</p>
+        <a href="#contact" class="more">相談する
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+      <article>
+        <span class="tag">02 — SEO</span>
+        <h3>SEOコンサルティング</h3>
+        <p>キーワード設計から記事構成、既存記事のリライトまで。順位ではなく、問い合わせにつながる検索流入を増やすことを目的に進めます。</p>
+        <a href="#contact" class="more">相談する
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+      <article>
+        <span class="tag">03 — AIO</span>
+        <h3>AI検索対策（AIO・LLMO）</h3>
+        <p>ChatGPTなどのAIが情報源として引用しやすい構造にサイトを整えます。検索エンジンだけを見た対策では届かない層に接点をつくります。</p>
+        <a href="#contact" class="more">相談する
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="section section--dark" id="metrics">
+  <div class="wrap reveal">
+    <p class="eyebrow">RESULT</p>
+    <h2 class="h2">支援先メディアの実績</h2>
+    <div class="metrics">
+      <div><p class="num">20<small>万</small></p><p class="cap">月間セッション数</p></div>
+      <div><p class="num">120<small>本</small></p><p class="cap">納品記事数</p></div>
+      <div><p class="num">15<small>%</small></p><p class="cap">主要KW1位獲得率</p></div>
+      <div><p class="num">16<small>年</small></p><p class="cap">SEO実務歴</p></div>
+    </div>
+    <p class="note">2023年8月から18ヶ月間、企業オウンドメディア1媒体のSEOディレクションを担当した際の実績です。支援開始時点の月間セッション数は3万でした。記載の数値は同期間・同媒体の全データにもとづくもので、成果を保証するものではありません。</p>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="section" id="works">
+  <div class="wrap reveal">
+    <p class="eyebrow">WORKS</p>
+    <h2 class="h2">制作実績</h2>
+    <p class="lead">守秘義務のある案件は、業種とジャンルのみを掲載しています。</p>
+    <div class="works">
+      <article>
+        <div class="work-shot">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <div class="shot-body"><div class="l a"></div><div class="l b"></div><div class="l c"></div><div class="l d"></div></div>
+        </div>
+        <p class="cat">CARE / WORDPRESS</p>
+        <h3>介護施設のホームページ制作</h3>
+        <p>広島県福山市。ご家族が安心して問い合わせできる導線と、職員が自分で更新できる構成に。</p>
+      </article>
+      <article>
+        <div class="work-shot">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <div class="shot-body"><div class="l a"></div><div class="l b"></div><div class="l c"></div><div class="l d"></div></div>
+        </div>
+        <p class="cat">NPO / WORDPRESS</p>
+        <h3>NPO法人のサイト新規制作</h3>
+        <p>子育て支援団体。活動報告を継続的に発信できる設計と、独自ドメインへの移行までを担当。</p>
+      </article>
+      <article>
+        <div class="work-shot">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <div class="shot-body"><div class="l a"></div><div class="l b"></div><div class="l c"></div><div class="l d"></div></div>
+        </div>
+        <p class="cat">MEDIA / SEO</p>
+        <h3>企業オウンドメディアのSEO支援</h3>
+        <p>キーワード設計から記事構成、外部ライターの管理までを一貫して担当。18ヶ月で120記事を納品。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- REASON -->
+<section class="section section--tint" id="reason">
+  <div class="wrap reveal">
+    <p class="eyebrow">REASON</p>
+    <h2 class="h2">選ばれている理由</h2>
+    <ul class="reasons">
+      <li>
+        <span class="rn">01</span>
+        <h3>窓口がひとつで完結する</h3>
+        <p>設計・デザイン・実装・SEO・記事まで同じ人間が担当します。「その件は別の担当に確認します」が発生しません。</p>
+      </li>
+      <li>
+        <span class="rn">02</span>
+        <h3>担当が最後まで変わらない</h3>
+        <p>営業と制作が分かれていないため、最初の打ち合わせで話した内容がそのまま形になります。</p>
+      </li>
+      <li>
+        <span class="rn">03</span>
+        <h3>修正が早い</h3>
+        <p>文言や画像の差し替え、色や余白の微調整といった軽微な修正は、回数を設けず柔軟に対応します。</p>
+      </li>
+      <li>
+        <span class="rn">04</span>
+        <h3>公開後の運用まで伴走する</h3>
+        <p>更新方法の説明、アクセス解析の見方、記事の書き方まで共有します。自走できる状態を目標にします。</p>
+      </li>
+      <li>
+        <span class="rn">05</span>
+        <h3>小規模事業者の予算感で組み立てる</h3>
+        <p>必要なものと後回しでよいものを分けて提案します。最初から全部そろえる必要はありません。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="section" id="flow">
+  <div class="wrap reveal">
+    <p class="eyebrow">FLOW</p>
+    <h2 class="h2">制作の流れ</h2>
+    <p class="lead">工程ごとに内容を確認していただき、承認を得てから次へ進みます。後戻りが起きにくい進め方です。</p>
+    <div class="flow">
+      <article>
+        <span class="fn">STEP 01</span>
+        <h3>構成</h3>
+        <p>目的とターゲットを整理し、ページ構成と各セクションの内容を決めます。ここで方向性をそろえます。</p>
+      </article>
+      <article>
+        <span class="fn">STEP 02</span>
+        <h3>デザイン</h3>
+        <p>トップページのデザイン案を作成し、配色と写真の方針を確定します。下層ページはここで決めた型を展開します。</p>
+      </article>
+      <article>
+        <span class="fn">STEP 03</span>
+        <h3>実装・公開</h3>
+        <p>コーディングと動作確認を行い、サーバーへ公開します。更新方法の説明もこの段階で行います。</p>
+      </article>
+    </div>
+    <p class="flow-note">文言や画像の差し替え、色・余白・文字サイズの微調整は回数を設けず対応します。デザインやレイアウト、構成そのものの変更、および承認済み工程のやり直しは、別途お見積りとなります。</p>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="section section--tint" id="price">
+  <div class="wrap reveal">
+    <p class="eyebrow">PRICE</p>
+    <h2 class="h2">料金プラン</h2>
+    <p class="lead">ページ数や機能によって金額は変わります。目安としてお考えください。</p>
+    <div class="plans">
+      <article class="plan">
+        <h3>ライト</h3>
+        <p class="price">10<small>万円〜</small></p>
+        <p class="tax">税込 / 制作期間の目安 2〜3週間</p>
+        <ul>
+          <li>1〜3ページ</li>
+          <li>スマートフォン対応</li>
+          <li>お問い合わせフォーム</li>
+          <li>基本的なSEO設定</li>
+          <li class="off">記事コンテンツの作成</li>
+          <li class="off">公開後の運用サポート</li>
+        </ul>
+      </article>
+      <article class="plan plan--rec">
+        <span class="badge">おすすめ</span>
+        <h3>スタンダード</h3>
+        <p class="price">20<small>万円〜</small></p>
+        <p class="tax">税込 / 制作期間の目安 4〜6週間</p>
+        <ul>
+          <li>5〜8ページ</li>
+          <li>WordPressで自社更新が可能</li>
+          <li>キーワード設計にもとづく構成</li>
+          <li>お知らせ・ブログ機能</li>
+          <li>更新方法のレクチャー</li>
+          <li class="off">記事コンテンツの継続作成</li>
+        </ul>
+      </article>
+      <article class="plan">
+        <h3>プレミアム</h3>
+        <p class="price">30<small>万円〜</small></p>
+        <p class="tax">税込 / 制作期間の目安 6〜10週間</p>
+        <ul>
+          <li>スタンダードの内容すべて</li>
+          <li>SEO記事の初期5本を納品</li>
+          <li>AI検索向けの構造化対応</li>
+          <li>公開後3ヶ月の運用サポート</li>
+          <li>月1回のレポートと改善提案</li>
+          <li>写真撮影ディレクション</li>
+        </ul>
+      </article>
+    </div>
+    <p class="price-note">記載の金額は税込です。ページ数の追加、独自機能の開発、写真撮影、ロゴ制作などが必要な場合は別途お見積りとなります。サーバー代・ドメイン代はお客様のご負担です。着手時に50%、納品時に50%のお支払いをお願いしています。</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="wrap reveal">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="h2">よくあるご質問</h2>
+    <ul class="faq">
+      <li><h3>ホームページを持っていませんが、何から始めればいいですか。</h3><p>まず無料のご相談で、何を目的にするのかを整理するところから始めます。その場で制作を決めていただく必要はありません。</p></li>
+      <li><h3>すでにあるサイトの改善だけをお願いできますか。</h3><p>できます。現状のサイトを診断し、作り直すべきか、部分的な改善で足りるかをお伝えします。作り直しが不要な場合はその旨をお伝えします。</p></li>
+      <li><h3>制作期間はどのくらいかかりますか。</h3><p>ページ数によりますが、5ページ程度で4〜6週間が目安です。原稿と写真のご準備状況によって前後します。</p></li>
+      <li><h3>写真や原稿がなくても依頼できますか。</h3><p>可能です。原稿はヒアリングをもとにこちらで構成案を作成します。写真は撮影のディレクションまで対応できます。</p></li>
+      <li><h3>公開したあと、自分で更新できますか。</h3><p>WordPressで制作するため、お知らせや文章の更新はご自身で行えます。公開時に操作方法をご説明します。</p></li>
+      <li><h3>修正は何回まで対応してもらえますか。</h3><p>文言や画像の差し替え、色や余白の微調整は回数を設けていません。デザインや構成そのものの変更は別途お見積りとなります。</p></li>
+      <li><h3>SEOだけ、記事作成だけの依頼もできますか。</h3><p>できます。制作を伴わないSEOコンサルティングや記事作成のみのご依頼も承っています。</p></li>
+      <li><h3>対応エリアは名古屋だけですか。</h3><p>全国対応しています。打ち合わせはオンラインで行うため、これまでも他県のお客様のご依頼を担当しています。</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="section section--tint" id="profile">
+  <div class="wrap reveal">
+    <p class="eyebrow">ABOUT</p>
+    <h2 class="h2">運営者について</h2>
+    <div class="profile">
+      <div class="pf-photo"><span>髙崎</span></div>
+      <div>
+        <h3>髙崎</h3>
+        <p class="role">インフォサクセス 代表 / Webディレクター</p>
+        <p>もともとは自動車部品メーカーでエンジン制御ソフトの開発をしていました。特許の出願も10件以上あります。その後、個人でメディアを立ち上げたことをきっかけに、2011年からWebの世界に移りました。</p>
+        <p>技術の側から入っているので、「なんとなく良さそう」ではなく、数字と構造で説明することを大事にしています。作って終わりにせず、公開後にどう育てるかまで一緒に考える相手を探している方に向いていると思います。</p>
+        <div class="pf-list">
+          <div><dt>拠点</dt><dd>愛知県名古屋市（全国対応）</dd></div>
+          <div><dt>SEO</dt><dd>実務歴16年 / SEO検定1級</dd></div>
+          <div><dt>ライティング</dt><dd>実務歴15年</dd></div>
+          <div><dt>Web制作</dt><dd>実務歴12年 / WordPress・HTML</dd></div>
+          <div><dt>そのほか</dt><dd>Google Apps Scriptによる業務自動化の開発</dd></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section--dark" id="contact">
+  <div class="narrow cta-inner reveal">
+    <p class="eyebrow" style="justify-content:center">CONTACT</p>
+    <h2>まずは、いまのサイトの<br>課題を無料で診断します。</h2>
+    <p>診断だけのご利用でも構いません。営業のご連絡はしていません。<br>2営業日以内にご返信します。</p>
+    <div class="form">
+      <div>
+        <label for="f-name">お名前</label>
+        <input type="text" id="f-name" autocomplete="name" placeholder="山田 太郎">
+      </div>
+      <div>
+        <label for="f-mail">メールアドレス</label>
+        <input type="email" id="f-mail" autocomplete="email" placeholder="info@example.com">
+      </div>
+      <div>
+        <label for="f-type">ご相談の種類</label>
+        <select id="f-type">
+          <option>ホームページを新しく作りたい</option>
+          <option>いまのサイトを改善したい</option>
+          <option>SEO・集客について相談したい</option>
+          <option>AI検索対策について相談したい</option>
+          <option>その他</option>
+        </select>
+      </div>
+      <div>
+        <label for="f-body">ご相談内容</label>
+        <textarea id="f-body" placeholder="現在の状況やお困りごとをお書きください。"></textarea>
+      </div>
+      <button type="button" class="btn btn--light submit" id="submitBtn">無料診断を申し込む</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="ft-top">
+      <div>
+        <p class="ft-logo">インフォサクセス</p>
+        <p style="font-size:12.5px;margin-top:10px">ホームページ制作 / SEO / AI検索対策</p>
+      </div>
+      <nav class="ft-nav" aria-label="フッターメニュー">
+        <a href="#service">サービス</a>
+        <a href="#works">制作実績</a>
+        <a href="#flow">制作の流れ</a>
+        <a href="#price">料金</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#profile">運営者</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+    <div class="ft-bottom">
+      <span>&copy; INFOSUCCESS</span>
+      <span>BUILD 2026-08-05a</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sp-cta">
+  <a href="#service" class="s">サービス</a>
+  <a href="#contact" class="p">無料サイト診断</a>
+</div>
+
+<script>
+(function(){
+  var header=document.getElementById('siteHeader');
+  var burger=document.getElementById('burger');
+  var gnav=document.getElementById('gnav');
+
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>60){header.classList.add('scrolled');}
+    else{header.classList.remove('scrolled');}
+  },{passive:true});
+
+  burger.addEventListener('click',function(){
+    var open=gnav.classList.toggle('open');
+    burger.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');
+    document.body.style.overflow=open?'hidden':'';
+  });
+  gnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      gnav.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    });
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); } });
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  var links=document.querySelectorAll('#sideIndex a');
+  var targets=[];
+  links.forEach(function(l){
+    var t=document.querySelector(l.getAttribute('href'));
+    if(t){ targets.push({link:l,el:t}); }
+  });
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){ l.classList.remove('active'); });
+        var hit=targets.filter(function(t){ return t.el===e.target; })[0];
+        if(hit){ hit.link.classList.add('active'); }
+      }
+    });
+  },{threshold:.3,rootMargin:'-30% 0px -50% 0px'});
+  targets.forEach(function(t){ spy.observe(t.el); });
+
+  document.getElementById('submitBtn').addEventListener('click',function(){
+    alert('こちらは確認用のデザイン案です。送信機能は接続前の状態です。');
+  });
+})();
+</script>
+</body>
+</html>
